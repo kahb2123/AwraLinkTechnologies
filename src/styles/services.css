@@ -1,0 +1,120 @@
+/* ===== Services Page ===== */
+
+.services-intro {
+  max-width: 740px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+.service-detail {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.service-detail--alt {
+  background-color: var(--color-white);
+}
+
+.service-detail__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.service-detail--reverse .service-detail__inner {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.service-detail--reverse .service-detail__visual {
+  order: 2;
+}
+
+.service-detail__visual,
+.service-detail__content {
+  min-width: 0;
+}
+
+.service-detail__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1.15;
+  color: var(--color-blue);
+  background:
+    radial-gradient(18rem 18rem at 70% 20%, rgba(25, 198, 217, 0.16), transparent 65%),
+    linear-gradient(135deg, rgba(23, 105, 255, 0.1), rgba(25, 198, 217, 0.12));
+  border: 1px solid rgba(23, 105, 255, 0.16);
+  border-radius: var(--radius-xl);
+}
+
+.service-detail__visual::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px dashed rgba(23, 105, 255, 0.25);
+  border-radius: calc(var(--radius-xl) - 8px);
+  pointer-events: none;
+}
+
+.service-detail__visual .icon-chip {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+}
+
+.service-detail__number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: rgba(23, 105, 255, 0.14);
+}
+
+.service-detail__content h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+}
+
+.service-detail__content > p {
+  color: var(--color-muted);
+}
+
+.capability-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.5rem 0 1.9rem;
+  list-style: none;
+}
+
+.capability-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.capability-list svg {
+  flex: none;
+  margin-top: 0.25rem;
+  color: var(--color-cyan);
+}
+
+@media (max-width: 900px) {
+  .service-detail__inner,
+  .service-detail--reverse .service-detail__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail--reverse .service-detail__visual {
+    order: 0;
+  }
+
+  .service-detail__visual {
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
