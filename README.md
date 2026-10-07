@@ -84,13 +84,13 @@ Edit **`src/config/company.js`**. Everything editable lives there:
 
 ### Logo
 
-The site uses a hand-built SVG logo at **`public/logo.svg`** (gradient network-node mark +
-"AweraLink / TECHNOLOGIES PLC" wordmark). It is rendered by **`src/components/Logo.jsx`** via
-an `<img src="/logo.svg">` inside `.logo__mark`, alongside the text lockup in `.logo__text`.
+The site uses the company logo image at **`public/image.jpg`** (1254×1254 JPEG). It is
+rendered by **`src/components/Logo.jsx`** via an `<img src="/image.jpg">` inside
+`.logo__mark`, alongside the text lockup in `.logo__text`.
 
-To use your own logo file instead:
+To use a different logo file instead:
 
-1. Place the logo image (e.g. `logo.svg` or `logo.png`) in `public/`, replacing the existing file.
+1. Place the logo image (e.g. `image.jpg`, `logo.png`, or `logo.svg`) in `public/`.
 2. In `src/components/Logo.jsx`, update the `<img>` `src` attribute (and optionally `alt`/`width`/`height`).
 3. Adjust `.logo__name` / `.logo__sub` in `src/styles/global.css` if you want to hide the text lockup.
 
