@@ -84,18 +84,26 @@ Edit **`src/config/company.js`**. Everything editable lives there:
 
 ### Logo
 
-The site currently uses the text-based logo treatment from the design spec
-(gradient network-node mark + "AweraLink / TECHNOLOGIES PLC" wordmark), implemented in
-**`src/components/Logo.jsx`**.
+The site uses a hand-built SVG logo at **`public/logo.svg`** (gradient network-node mark +
+"AweraLink / TECHNOLOGIES PLC" wordmark). It is rendered by **`src/components/Logo.jsx`** via
+an `<img src="/logo.svg">` inside `.logo__mark`, alongside the text lockup in `.logo__text`.
 
 To use your own logo file instead:
 
-1. Place the logo image (e.g. `logo.svg` or `logo.png`) in `public/`.
-2. In `src/components/Logo.jsx`, replace the `<svg>` mark with:
-   ```jsx
-   <img src="/logo.svg" alt="AweraLink Technologies PLC" style={{ height: 40 }} />
-   ```
+1. Place the logo image (e.g. `logo.svg` or `logo.png`) in `public/`, replacing the existing file.
+2. In `src/components/Logo.jsx`, update the `<img>` `src` attribute (and optionally `alt`/`width`/`height`).
 3. Adjust `.logo__name` / `.logo__sub` in `src/styles/global.css` if you want to hide the text lockup.
+
+### SEO files
+
+The following static files live in `public/` and are copied to `dist/` on build:
+
+- **`robots.txt`** — allows all crawlers, points to the sitemap.
+- **`sitemap.xml`** — lists the five public routes with change frequency and priority.
+- **`og-image.svg`** — 1200×630 share image referenced by Open Graph and Twitter Card meta tags in `index.html`.
+
+All social/OG URLs in `index.html` use the placeholder host `https://aweralink.example/`.
+Replace `aweralink.example` with the real domain before publishing.
 
 ### Images and illustrations
 

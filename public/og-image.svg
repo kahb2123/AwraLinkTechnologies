@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="AweraLink Technologies PLC - Technology and Infrastructure Solutions">
+  <title>AweraLink Technologies PLC</title>
+  <desc>Open Graph share image: Technology &amp; Infrastructure Solutions, Addis Ababa, Ethiopia</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1F3A" />
+      <stop offset="55%" stop-color="#12305A" />
+      <stop offset="100%" stop-color="#081527" />
+    </linearGradient>
+    <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1769FF" />
+      <stop offset="100%" stop-color="#19C6D9" />
+    </linearGradient>
+    <linearGradient id="linkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1769FF" />
+      <stop offset="100%" stop-color="#19C6D9" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Subtle grid -->
+  <g stroke="rgba(25,101,255,0.10)" stroke-width="1">
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="360" x2="1200" y2="360" />
+    <line x1="0" y1="480" x2="1200" y2="480" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- Mark -->
+  <g transform="translate(80, 150)" filter="url(#glow)">
+    <rect x="0" y="0" width="180" height="180" rx="48" fill="url(#markGrad)" />
+    <path d="M56 128 L120 56 L184 128" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
+    <circle cx="56" cy="128" r="10" fill="#FFFFFF" />
+    <circle cx="120" cy="56" r="10" fill="#FFFFFF" />
+    <circle cx="184" cy="128" r="10" fill="#FFFFFF" />
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(310, 150)">
+    <text x="0" y="110" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="800" letter-spacing="-0.02em" fill="#FFFFFF">
+      Awera<span fill="url(#linkGrad)">Link</span>
+    </text>
+    <text x="0" y="176" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.34em" fill="rgba(255,255,255,0.62)">
+      TECHNOLOGIES&#160;PLC
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(310, 380)">
+    <text x="0" y="40" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600" fill="rgba(255,255,255,0.92)">
+      Technology &amp; Infrastructure Solutions
+    </text>
+    <text x="0" y="76" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,0.60)">
+      Addis Ababa, Ethiopia
+    </text>
+  </g>
+</svg>
