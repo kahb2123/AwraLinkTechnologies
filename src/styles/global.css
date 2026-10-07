@@ -370,11 +370,31 @@ section[id] {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
+  min-width: 0;
   text-decoration: none;
 }
 
 .logo__mark {
+  position: relative;
   display: inline-flex;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.logo__mark img {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  max-width: none;
+  flex: none;
+  transform: translateX(-50%);
+  object-fit: contain;
 }
 
 .logo__text {
@@ -384,10 +404,11 @@ section[id] {
 }
 
 .logo__name {
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--primary-navy);
+  white-space: nowrap;
 }
 
 .logo__name strong {
@@ -397,10 +418,11 @@ section[id] {
 
 .logo__sub {
   margin-top: 0.22rem;
-  font-size: 0.56rem;
+  font-size: 0.52rem;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   color: var(--text-medium);
+  white-space: nowrap;
 }
 
 .logo--light .logo__name {

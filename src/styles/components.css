@@ -8,7 +8,7 @@
   padding: clamp(6.5rem, 14vw, 9rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   color: var(--white);
   background:
-    linear-gradient(90deg, rgba(7, 20, 38, 0.96), rgba(11, 31, 58, 0.76)),
+    linear-gradient(90deg, rgba(7, 20, 38, 0.92), rgba(11, 31, 58, 0.58)),
     url('/data-center.jpg') center 42% / cover no-repeat,
     var(--gradient-dark);
 }

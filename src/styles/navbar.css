@@ -30,6 +30,18 @@
   height: var(--nav-height);
 }
 
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  max-height: 100%;
+  text-decoration: none;
+}
+
+.navbar .logo {
+  max-height: 100%;
+}
+
 .navbar__nav {
   display: flex;
   align-items: center;
@@ -111,6 +123,34 @@
 
 /* Mobile navigation */
 @media (max-width: 960px) {
+  .navbar__inner {
+    gap: 0.75rem;
+  }
+
+  .navbar .logo {
+    gap: 0.55rem;
+  }
+
+  .navbar .logo__mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar .logo__mark img {
+    top: -6px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .navbar .logo__name {
+    font-size: 1.05rem;
+  }
+
+  .navbar .logo__sub {
+    font-size: 0.46rem;
+    letter-spacing: 0.19em;
+  }
+
   .navbar__toggle {
     display: inline-flex;
   }

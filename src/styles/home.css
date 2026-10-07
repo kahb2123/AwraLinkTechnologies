@@ -417,9 +417,9 @@
   background:
     linear-gradient(
       90deg,
-      rgba(7, 20, 38, 0.96) 0%,
-      rgba(11, 31, 58, 0.82) 48%,
-      rgba(11, 31, 58, 0.4) 100%
+      rgba(7, 20, 38, 0.92) 0%,
+      rgba(11, 31, 58, 0.7) 45%,
+      rgba(11, 31, 58, 0.24) 100%
     ),
     url('/data-center.jpg') center 48% / cover no-repeat,
     var(--dark-navy);
@@ -578,6 +578,14 @@
     min-height: auto;
     padding: 5rem 0 4.5rem;
     background-position: 58% center;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(7, 20, 38, 0.9) 0%,
+        rgba(11, 31, 58, 0.72) 56%,
+        rgba(11, 31, 58, 0.4) 100%
+      ),
+      url('/data-center.jpg');
   }
 
   .hero__inner {
