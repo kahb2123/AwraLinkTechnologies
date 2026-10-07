@@ -43,6 +43,10 @@
   height: 68px;
 }
 
+.navbar .logo {
+  gap: 0.65rem;
+}
+
 .navbar__nav {
   display: flex;
   align-items: center;
@@ -129,8 +133,21 @@
   }
 
   .navbar .logo__image {
-    width: 84px;
-    height: 62px;
+    width: 68px;
+    height: 50px;
+  }
+
+  .navbar .logo {
+    gap: 0.45rem;
+  }
+
+  .navbar .logo__name {
+    font-size: 0.95rem;
+  }
+
+  .navbar .logo__sub {
+    font-size: 0.48rem;
+    letter-spacing: 0.14em;
   }
 
   .navbar__toggle {

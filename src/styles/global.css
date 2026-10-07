@@ -375,10 +375,34 @@ section[id] {
 
 .logo__image {
   display: block;
+  flex: none;
   width: 92px;
   height: 68px;
   object-fit: cover;
   object-position: center;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.05;
+}
+
+.logo__name {
+  color: var(--primary-navy);
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.logo__sub {
+  color: var(--text-medium);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
 }
 
 /* ===== Accessibility Motion ===== */
