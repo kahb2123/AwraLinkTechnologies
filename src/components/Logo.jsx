@@ -3,10 +3,10 @@ export default function Logo({ variant = 'dark' }) {
     <span className={`logo logo--${variant}`}>
       <span className="logo__mark" aria-hidden="true">
         <img
-          src="/image.jpg"
+          src="/logo-mark.svg"
           alt=""
-          width="96"
-          height="96"
+          width="44"
+          height="44"
           loading="eager"
           decoding="async"
         />

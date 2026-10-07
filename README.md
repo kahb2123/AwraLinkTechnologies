@@ -84,9 +84,9 @@ Edit **`src/config/company.js`**. Everything editable lives there:
 
 ### Logo
 
-The site uses the company logo image at **`public/image.jpg`** (1254×1254 JPEG). It is
-rendered by **`src/components/Logo.jsx`** via an `<img src="/image.jpg">` inside
-`.logo__mark`, alongside the text lockup in `.logo__text`.
+The site uses the company logo image at **`public/image.jpg`** (1254×1254 JPEG).
+The navigation mark uses **`public/logo-mark.svg`** to frame the emblem from that
+image, with the company wordmark rendered alongside it by `src/components/Logo.jsx`.
 
 To use a different logo file instead:
 
