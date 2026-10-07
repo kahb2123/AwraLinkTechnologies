@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow nothing — the site is public and intended to be indexed.
+
+# Crawl-budget-friendly directives for well-behaved crawlers.
+Crawl-delay: 1
+
+# Preferred sitemap location.
+Sitemap: https://aweralink.example/sitemap.xml
