@@ -2,7 +2,8 @@
 
 .footer {
   color: rgba(255, 255, 255, 0.72);
-  background-color: var(--color-navy-dark);
+  background-color: var(--dark-navy);
+  border-top: 1px solid rgba(25, 198, 217, 0.18);
 }
 
 .footer__main {

@@ -46,6 +46,7 @@
     linear-gradient(135deg, rgba(23, 105, 255, 0.1), rgba(25, 198, 217, 0.12));
   border: 1px solid rgba(23, 105, 255, 0.16);
   border-radius: var(--radius-xl);
+  overflow: hidden;
 }
 
 .service-detail__visual::before {
@@ -55,6 +56,49 @@
   border: 1px dashed rgba(23, 105, 255, 0.25);
   border-radius: calc(var(--radius-xl) - 8px);
   pointer-events: none;
+  z-index: 1;
+}
+
+.service-detail__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.24;
+  transition: transform 600ms ease;
+}
+
+.service-detail__visual:hover::after {
+  transform: scale(1.04);
+}
+
+.service-detail__visual[data-service-index='1']::after {
+  background-image: url('/data-center.jpg');
+}
+
+.service-detail__visual[data-service-index='2']::after,
+.service-detail__visual[data-service-index='5']::after {
+  background-image: url('/network-racks.jpg');
+}
+
+.service-detail__visual[data-service-index='3']::after {
+  background-image: url('/network-infrastructure.jpg');
+}
+
+.service-detail__visual[data-service-index='4']::after {
+  background-image: url('/power-infrastructure.jpg');
+}
+
+.service-detail__visual[data-service-index='6']::after {
+  background-image: url('/security-systems.jpg');
+}
+
+.service-detail__visual > * {
+  position: relative;
+  z-index: 2;
 }
 
 .service-detail__visual .icon-chip {

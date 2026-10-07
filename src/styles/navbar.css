@@ -1,21 +1,25 @@
-/* ===== Navbar ===== */
+/* ===== AweraLink Technologies PLC — Premium Enterprise Navbar ===== */
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: var(--white);
+  color: var(--primary-navy);
   border-bottom: 1px solid transparent;
   transition:
+    background-color var(--transition-base),
+    backdrop-filter var(--transition-base),
     border-color var(--transition-base),
     box-shadow var(--transition-base);
 }
 
 .navbar--scrolled {
-  border-bottom-color: var(--color-border);
-  box-shadow: 0 4px 20px rgba(11, 31, 58, 0.06);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--border-gray);
+  box-shadow: 0 8px 30px rgba(11, 31, 58, 0.08);
 }
 
 .navbar__inner {
@@ -44,7 +48,7 @@
 .navbar__link {
   position: relative;
   padding: 0.4rem 0;
-  color: var(--color-muted);
+  color: var(--text-medium);
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -59,22 +63,28 @@
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--color-blue), var(--color-cyan));
+  background: var(--gradient-technology);
   transition: width var(--transition-base);
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: var(--color-navy);
+  color: var(--primary-navy);
 }
 
 .navbar__link--active {
-  color: var(--color-blue);
+  color: var(--primary-blue);
 }
 
 .navbar__link:hover::after,
 .navbar__link--active::after {
   width: 100%;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navbar__toggle {
@@ -84,11 +94,19 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  color: var(--color-navy);
+  color: var(--primary-navy);
   background: transparent;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border-gray);
   border-radius: 10px;
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.navbar__toggle:hover {
+  background-color: var(--light-blue);
+  border-color: var(--primary-blue);
 }
 
 /* Mobile navigation */
@@ -106,9 +124,9 @@
     align-items: stretch;
     gap: 0;
     padding: 0.5rem 4% 1.25rem;
-    background-color: var(--color-white);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-lg);
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-gray);
+    box-shadow: 0 20px 45px rgba(11, 31, 58, 0.12);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -132,7 +150,7 @@
   }
 
   .navbar__list li {
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--border-gray);
   }
 
   .navbar__link {
@@ -146,9 +164,9 @@
   }
 
   .navbar__link--active {
-    color: var(--color-blue);
+    color: var(--primary-blue);
     padding-left: 0.6rem;
-    border-left: 3px solid var(--color-blue);
+    border-left: 3px solid var(--primary-blue);
   }
 
   .navbar__actions {

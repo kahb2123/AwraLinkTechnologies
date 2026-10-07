@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, ShieldCheck, Zap } from 'lucide-react';
-import HeroVisual from '../assets/HeroVisual';
+import { ArrowRight, MapPin } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function Hero() {
@@ -43,23 +42,6 @@ export default function Hero() {
               <span>Serving banks, enterprises, government institutions, and NGOs across Ethiopia</span>
             </p>
           </ScrollReveal>
-        </div>
-        <div className="hero__visual">
-          <HeroVisual />
-          <div className="hero__chip hero__chip--one" aria-hidden="true">
-            <ShieldCheck size={20} style={{ color: '#1769FF' }} />
-            <span>
-              Network Security
-              <small>Firewall &amp; perimeter protection</small>
-            </span>
-          </div>
-          <div className="hero__chip hero__chip--two" aria-hidden="true">
-            <Zap size={20} style={{ color: '#19C6D9' }} />
-            <span>
-              Power Continuity
-              <small>UPS &amp; backup power systems</small>
-            </span>
-          </div>
         </div>
       </div>
     </section>

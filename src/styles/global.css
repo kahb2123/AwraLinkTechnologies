@@ -1,27 +1,63 @@
 /* ===== AweraLink Technologies PLC — Design System ===== */
 
 :root {
-  --color-navy: #0B1F3A;
-  --color-navy-dark: #081527;
-  --color-navy-2: #12305A;
-  --color-blue: #1769FF;
-  --color-blue-dark: #0F54DB;
-  --color-cyan: #19C6D9;
-  --color-white: #FFFFFF;
-  --color-bg: #F4F7FB;
-  --color-text: #182230;
-  --color-muted: #667085;
-  --color-border: #E2E9F2;
-  --color-error: #D92D20;
-  --color-success: #12805C;
+  /* ===== AweraLink Technologies PLC — Premium Brand Color System ===== */
+  --primary-navy: #0B1F3A;
+  --dark-navy: #071426;
+  --primary-blue: #1769FF;
+  --medium-blue: #1254CC;
+  --technology-cyan: #19C6D9;
+
+  --light-blue: #EAF2FF;
+  --very-light-blue: #F4F8FF;
+
+  --white: #FFFFFF;
+  --off-white: #F8FAFC;
+  --light-gray: #F1F5F9;
+  --border-gray: #E2E8F0;
+
+  --text-dark: #172033;
+  --text-medium: #475467;
+  --text-light: #667085;
+
+  --success: #12B76A;
+  --warning: #F79009;
+  --error: #F04438;
+
+  /* Legacy aliases used throughout the codebase */
+  --color-navy: var(--primary-navy);
+  --color-navy-dark: var(--dark-navy);
+  --color-navy-2: var(--medium-blue);
+  --color-blue: var(--primary-blue);
+  --color-blue-dark: var(--medium-blue);
+  --color-cyan: var(--technology-cyan);
+  --color-white: var(--white);
+  --color-bg: var(--very-light-blue);
+  --color-text: var(--text-dark);
+  --color-muted: var(--text-medium);
+  --color-border: var(--border-gray);
+  --color-error: var(--error);
+  --color-success: var(--success);
+
+  /* ===== Gradients ===== */
+  --gradient-primary: linear-gradient(135deg, #0B1F3A 0%, #1254CC 60%, #1769FF 100%);
+  --gradient-technology: linear-gradient(135deg, #1769FF 0%, #19C6D9 100%);
+  --gradient-dark: linear-gradient(135deg, #071426 0%, #0B1F3A 55%, #1254CC 100%);
+  --gradient-hero-overlay: linear-gradient(
+    90deg,
+    rgba(7, 20, 38, 0.96) 0%,
+    rgba(11, 31, 58, 0.82) 45%,
+    rgba(11, 31, 58, 0.40) 100%
+  );
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
 
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
   --shadow-md: 0 8px 24px rgba(11, 31, 58, 0.08);
   --shadow-lg: 0 20px 48px rgba(11, 31, 58, 0.14);
   --shadow-blue: 0 10px 28px rgba(23, 105, 255, 0.28);
+  --shadow-blue-hover: 0 14px 32px rgba(23, 105, 255, 0.36);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -33,6 +69,7 @@
 
   --transition-fast: 180ms ease;
   --transition-base: 260ms ease;
+  --transition-slow: 400ms ease;
 }
 
 /* ===== Reset & Base ===== */
@@ -50,11 +87,19 @@ html {
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--very-light-blue);
+  color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-family);
 }
 
 h1,
@@ -62,7 +107,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  color: var(--color-navy);
+  color: var(--primary-navy);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.015em;
@@ -125,7 +170,7 @@ section[id] {
 }
 
 .section--alt {
-  background-color: var(--color-bg);
+  background-color: var(--very-light-blue);
 }
 
 .site {
@@ -166,7 +211,7 @@ section[id] {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--color-blue);
+  color: var(--primary-blue);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -178,21 +223,22 @@ section[id] {
   width: 28px;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--color-blue), var(--color-cyan));
+  background: var(--gradient-technology);
 }
 
 .section-heading h2 {
   margin: 0.8rem 0 1rem;
   font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  color: var(--primary-navy);
 }
 
 .section-heading p {
-  color: var(--color-muted);
+  color: var(--text-medium);
   font-size: 1.05rem;
 }
 
 .lead {
-  color: var(--color-muted);
+  color: var(--text-medium);
   font-size: 1.08rem;
   max-width: 46rem;
 }
@@ -204,20 +250,20 @@ section[id] {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  padding: 0.85rem 1.7rem;
+  padding: 13px 22px;
   border: 1px solid transparent;
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast),
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    color var(--transition-fast);
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
 }
 
 .btn:hover {
@@ -225,13 +271,14 @@ section[id] {
 }
 
 .btn--primary {
-  color: var(--color-white);
-  background: linear-gradient(135deg, var(--color-blue), var(--color-blue-dark));
+  color: var(--white);
+  background: var(--primary-blue);
   box-shadow: var(--shadow-blue);
 }
 
 .btn--primary:hover {
-  box-shadow: 0 14px 32px rgba(23, 105, 255, 0.36);
+  background: var(--medium-blue);
+  box-shadow: var(--shadow-blue-hover);
 }
 
 .btn--primary:disabled {
@@ -241,19 +288,19 @@ section[id] {
 }
 
 .btn--outline-navy {
-  color: var(--color-navy);
+  color: var(--primary-navy);
   background-color: transparent;
   border-color: #C6D3E4;
 }
 
 .btn--outline-navy:hover {
-  color: var(--color-blue);
-  border-color: var(--color-blue);
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
 
 .btn--white {
-  color: var(--color-navy);
-  background-color: var(--color-white);
+  color: var(--primary-navy);
+  background-color: var(--white);
   box-shadow: var(--shadow-md);
 }
 
@@ -273,10 +320,20 @@ section[id] {
 /* ===== Cards & Shared Patterns ===== */
 
 .card {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 30px rgba(11, 31, 58, 0.06);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(23, 105, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(11, 31, 58, 0.12);
 }
 
 .icon-chip {
@@ -287,8 +344,8 @@ section[id] {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  color: var(--color-white);
-  background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
+  color: var(--white);
+  background: var(--gradient-technology);
   box-shadow: 0 8px 18px rgba(23, 105, 255, 0.25);
 }
 
@@ -296,10 +353,10 @@ section[id] {
 
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(30px);
   transition:
-    opacity 0.65s ease,
-    transform 0.65s ease;
+    opacity 700ms ease,
+    transform 700ms ease;
 }
 
 .reveal.is-visible {
@@ -330,12 +387,12 @@ section[id] {
   font-size: 1.28rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--color-navy);
+  color: var(--primary-navy);
 }
 
 .logo__name strong {
   font-weight: 800;
-  color: var(--color-blue);
+  color: var(--primary-blue);
 }
 
 .logo__sub {
@@ -343,15 +400,15 @@ section[id] {
   font-size: 0.56rem;
   font-weight: 700;
   letter-spacing: 0.28em;
-  color: var(--color-muted);
+  color: var(--text-medium);
 }
 
 .logo--light .logo__name {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .logo--light .logo__name strong {
-  color: var(--color-cyan);
+  color: var(--technology-cyan);
 }
 
 .logo--light .logo__sub {

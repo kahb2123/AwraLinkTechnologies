@@ -118,6 +118,7 @@ a.contact-row__value:hover {
 
 .form-card {
   padding: 2.2rem;
+  background: var(--very-light-blue);
 }
 
 .form-card h2 {
@@ -164,8 +165,8 @@ a.contact-row__value:hover {
   padding: 0.8rem 1rem;
   color: var(--color-text);
   background-color: var(--color-white);
-  border: 1px solid #D5DEEA;
-  border-radius: 10px;
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
   font: inherit;
   transition:
     border-color var(--transition-fast),
@@ -187,7 +188,7 @@ a.contact-row__value:hover {
 .field textarea:focus {
   outline: none;
   border-color: var(--color-blue);
-  box-shadow: 0 0 0 4px rgba(23, 105, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.12);
 }
 
 .field--error input,

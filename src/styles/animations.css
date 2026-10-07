@@ -1,4 +1,22 @@
-/* ===== SVG illustration animations ===== */
+/* ===== AweraLink Technologies PLC — Animation & Transition System ===== */
+
+.page-transition {
+  animation: page-enter 380ms ease both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle SVG illustration animations */
 
 .svg-float {
   animation: svg-float 6s ease-in-out infinite;
@@ -31,5 +49,54 @@
   }
   50% {
     opacity: 0.2;
+  }
+}
+
+/* Animated technology/network background for hero */
+
+.hero-network-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.hero-network-bg .connection-line {
+  animation: connection-pulse 4s ease-in-out infinite;
+}
+
+@keyframes connection-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Accessibility motion reduction */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-transition {
+    animation: none;
   }
 }

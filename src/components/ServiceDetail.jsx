@@ -13,7 +13,7 @@ export default function ServiceDetail({ icon: Icon, title, description, capabili
       aria-labelledby={`service-${index}-title`}
     >
       <div className="container service-detail__inner">
-        <ScrollReveal className="service-detail__visual">
+        <ScrollReveal className="service-detail__visual" data-service-index={index}>
           <span className="service-detail__number" aria-hidden="true">
             {String(index).padStart(2, '0')}
           </span>
