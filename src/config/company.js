@@ -1,9 +1,9 @@
 export const company = {
-  name: 'AweraLink Technologies PLC',
-  shortName: 'AweraLink',
+  name: 'AwraLink Technologies PLC',
+  shortName: 'AwraLink',
   tagline: 'Technology & Infrastructure Solutions',
   description:
-    'AweraLink Technologies PLC provides technology solutions, infrastructure implementation, equipment supply, installation, configuration, integration, and technical support for organizations across Ethiopia.',
+    'AwraLink Technologies PLC provides technology solutions, infrastructure implementation, equipment supply, installation, configuration, integration, and technical support for organizations across Ethiopia.',
   location: {
     addressLines: ['K Care Building, Mixco', 'Addis Ababa, Ethiopia'],
     fullAddress: 'K Care Building, Mixco, Addis Ababa, Ethiopia',

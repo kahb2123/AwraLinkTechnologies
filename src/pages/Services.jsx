@@ -9,7 +9,7 @@ export default function Services() {
     <>
       <PageMeta
         title="Services"
-        description="AweraLink Technologies PLC provides IT infrastructure, network solutions, security systems, power solutions, technology equipment supply, and installation, integration, and technical support for organizations in Ethiopia."
+        description="AwraLink Technologies PLC provides IT infrastructure, network solutions, security systems, power solutions, technology equipment supply, and installation, integration, and technical support for organizations in Ethiopia."
         path="/services"
       />
 
@@ -22,7 +22,7 @@ export default function Services() {
       <section className="section section--compact" aria-label="Service overview">
         <div className="container">
           <p className="services-intro">
-            AweraLink provides the following service capabilities for banks, enterprises, government
+            AwraLink provides the following service capabilities for banks, enterprises, government
             institutions, NGOs, and development organizations across Ethiopia. Each service is
             presented as a capability — tailored to your requirements and quoted per project.
           </p>

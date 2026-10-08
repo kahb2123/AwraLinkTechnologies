@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Technology & Infrastructure Solutions in Addis Ababa, Ethiopia"
-        description="AweraLink Technologies PLC delivers integrated IT infrastructure, networking, security, and power solutions that help organizations in Ethiopia operate securely, efficiently, and confidently."
+        description="AwraLink Technologies PLC delivers integrated IT infrastructure, networking, security, and power solutions that help organizations in Ethiopia operate securely, efficiently, and confidently."
         path="/"
       />
 
@@ -38,7 +38,7 @@ export default function Home() {
             id="services-heading"
             eyebrow="Our Services"
             title="Integrated Technology Solutions Under One Roof"
-            text="From infrastructure planning and equipment supply to installation and ongoing support, AweraLink delivers the full technology lifecycle for your organization."
+            text="From infrastructure planning and equipment supply to installation and ongoing support, AwraLink delivers the full technology lifecycle for your organization."
           />
           <div className="services-grid">
             {servicesOverview.map((service, index) => (
@@ -53,9 +53,9 @@ export default function Home() {
           <div className="split__content">
             <SectionHeading
               id="about-heading"
-              eyebrow="About AweraLink"
+              eyebrow="About AwraLink"
               title="Your Technology Infrastructure Partner"
-              text="AweraLink Technologies PLC supports organizations with practical, reliable technology solutions, from equipment supply and infrastructure planning to installation, implementation, and technical support. We focus on delivering solutions aligned with each client's operational needs."
+              text="AwraLink Technologies PLC supports organizations with practical, reliable technology solutions, from equipment supply and infrastructure planning to installation, implementation, and technical support. We focus on delivering solutions aligned with each client's operational needs."
             />
             <ul className="split__list">
               {aboutHighlights.map((highlight) => (
@@ -79,8 +79,8 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             id="why-heading"
-            eyebrow="Why AweraLink"
-            title="Why Choose AweraLink"
+            eyebrow="Why AwraLink"
+            title="Why Choose AwraLink"
             text="We combine technical expertise with a practical, client-focused approach to deliver infrastructure you can rely on."
           />
           <div className="grid-3">
@@ -97,7 +97,7 @@ export default function Home() {
             id="industries-heading"
             eyebrow="Industries We Serve"
             title="Industries We Serve"
-            text="Dependable technology infrastructure helps every sector operate with confidence. AweraLink adapts its solutions to the needs of each industry."
+            text="Dependable technology infrastructure helps every sector operate with confidence. AwraLink adapts its solutions to the needs of each industry."
           />
           <div className="grid-2">
             {industries.map((industry, index) => (

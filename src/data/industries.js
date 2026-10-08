@@ -34,7 +34,7 @@ export const industries = [
     title: 'Private Sector & Enterprises',
     short: 'Scalable infrastructure to support growth, collaboration, and daily operations.',
     description:
-      'Private companies and enterprises depend on scalable infrastructure to support growth, collaboration, and day-to-day operations. AweraLink delivers networking, IT infrastructure, and equipment supply with professional installation and support.',
+      'Private companies and enterprises depend on scalable infrastructure to support growth, collaboration, and day-to-day operations. AwraLink delivers networking, IT infrastructure, and equipment supply with professional installation and support.',
     needs: [
       'Enterprise LAN/WAN design and implementation',
       'Wireless networking and office connectivity',
@@ -48,7 +48,7 @@ export const industries = [
     title: 'NGOs & Development Organizations',
     short: 'Dependable connectivity and power for program coordination and data sharing.',
     description:
-      'Development organizations require dependable connectivity and power to coordinate programs, share data, and serve communities — including in areas with challenging infrastructure. AweraLink adapts solutions to the operational realities of the field.',
+      'Development organizations require dependable connectivity and power to coordinate programs, share data, and serve communities — including in areas with challenging infrastructure. AwraLink adapts solutions to the operational realities of the field.',
     needs: [
       'Reliable networking for offices and remote sites',
       'Power protection and backup for critical systems',

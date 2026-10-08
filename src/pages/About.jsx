@@ -44,13 +44,13 @@ export default function About() {
     <>
       <PageMeta
         title="About Us"
-        description="AweraLink Technologies PLC is an Ethiopian technology and infrastructure solutions company based in Addis Ababa, delivering reliable IT infrastructure, networking, security, and power solutions across Ethiopia."
+        description="AwraLink Technologies PLC is an Ethiopian technology and infrastructure solutions company based in Addis Ababa, delivering reliable IT infrastructure, networking, security, and power solutions across Ethiopia."
         path="/about"
       />
 
       <PageHero
         eyebrow="About Us"
-        title="About AweraLink Technologies PLC"
+        title="About AwraLink Technologies PLC"
         description="An Ethiopian technology and infrastructure solutions company based in Addis Ababa, serving organizations across Ethiopia."
       />
 
@@ -63,13 +63,13 @@ export default function About() {
               title="Practical Technology Solutions, Delivered Reliably"
             />
             <p>
-              AweraLink Technologies PLC is an Ethiopian technology and infrastructure solutions
+              AwraLink Technologies PLC is an Ethiopian technology and infrastructure solutions
               company headquartered in Addis Ababa. The company provides technology solutions,
               infrastructure implementation, equipment supply, installation, configuration,
               integration, and technical support for organizations across Ethiopia.
             </p>
             <p>
-              AweraLink works with banks and financial institutions, private companies, government
+              AwraLink works with banks and financial institutions, private companies, government
               institutions, NGOs, and development organizations — any organization that requires
               reliable IT infrastructure and security systems. Our approach is practical and
               client-focused: understand the operational need, design a fitting solution, and
@@ -165,7 +165,7 @@ export default function About() {
             id="about-industries-heading"
             eyebrow="Industries We Serve"
             title="Industries We Serve"
-            text="Dependable infrastructure supports every sector. AweraLink adapts its solutions to the operational needs of each industry."
+            text="Dependable infrastructure supports every sector. AwraLink adapts its solutions to the operational needs of each industry."
           />
           <div className="grid-2">
             {industries.map((industry, index) => (

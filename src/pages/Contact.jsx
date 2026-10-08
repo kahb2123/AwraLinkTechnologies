@@ -11,14 +11,14 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact"
-        description="Contact AweraLink Technologies PLC in Addis Ababa, Ethiopia to discuss IT infrastructure, networking, security, power, or equipment supply requirements."
+        description="Contact AwraLink Technologies PLC in Addis Ababa, Ethiopia to discuss IT infrastructure, networking, security, power, or equipment supply requirements."
         path="/contact"
       />
 
       <PageHero
         eyebrow="Contact Us"
         title="Let's Discuss Your Technology Needs"
-        description="Contact AweraLink Technologies PLC to discuss your IT infrastructure, networking, security, power, or equipment supply requirements."
+        description="Contact AwraLink Technologies PLC to discuss your IT infrastructure, networking, security, power, or equipment supply requirements."
       />
 
       <section className="section" aria-label="Contact details and inquiry form">
@@ -35,7 +35,7 @@ export default function Contact() {
                 Head Office
               </p>
               <p className="office-card__address">
-                AweraLink Technologies PLC
+                AwraLink Technologies PLC
                 <br />
                 {company.location.addressLines[0]}
                 <br />
@@ -83,7 +83,7 @@ export default function Contact() {
 
             <div className="contact-map">
               <iframe
-                title="Map showing the AweraLink Technologies PLC office location in Addis Ababa, Ethiopia"
+                title="Map showing the AwraLink Technologies PLC office location in Addis Ababa, Ethiopia"
                 src={company.map.embedUrl}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

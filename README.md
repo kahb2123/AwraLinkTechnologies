@@ -1,6 +1,6 @@
-# AweraLink Technologies PLC — Corporate Website
+# AwraLink Technologies PLC — Corporate Website
 
-A modern, responsive corporate website for **AweraLink Technologies PLC**, a technology and infrastructure solutions company based in Addis Ababa, Ethiopia.
+A modern, responsive corporate website for **AwraLink Technologies PLC**, a technology and infrastructure solutions company based in Addis Ababa, Ethiopia.
 
 ## Tech Stack
 
@@ -45,7 +45,7 @@ npm run preview
 ## Project Structure
 
 ```
-aweralink-website/
+awralink-website/
 ├── index.html                  # HTML shell, meta/OG tags, fonts
 ├── public/favicon.svg          # Site favicon
 └── src/
@@ -84,7 +84,7 @@ Edit **`src/config/company.js`**. Everything editable lives there:
 
 ### Logo
 
-The site uses the full company logo supplied at **`public/aweralink-logo.png`**,
+The site uses the full company logo supplied at **`public/awralink-logo.png`**,
 rendered proportionally in the header and footer by `src/components/Logo.jsx`.
 
 To use a different logo file instead:
@@ -101,8 +101,8 @@ The following static files live in `public/` and are copied to `dist/` on build:
 - **`sitemap.xml`** — lists the five public routes with change frequency and priority.
 - **`og-image.svg`** — 1200×630 share image referenced by Open Graph and Twitter Card meta tags in `index.html`.
 
-All social/OG URLs in `index.html` use the placeholder host `https://aweralink.example/`.
-Replace `aweralink.example` with the real domain before publishing.
+All social/OG URLs in `index.html` use the placeholder host `https://awralink.example/`.
+Replace `awralink.example` with the real domain before publishing.
 
 ### Images and illustrations
 

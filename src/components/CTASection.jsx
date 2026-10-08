@@ -5,7 +5,7 @@ import ScrollReveal from './ScrollReveal';
 export default function CTASection({
   title = "Let's Build Your Next Technology Solution",
   text = 'Tell us about your infrastructure needs and let our team help you identify the right solution.',
-  buttonLabel = 'Contact AweraLink',
+  buttonLabel = 'Contact AwraLink',
 }) {
   return (
     <section className="cta-section" aria-label="Call to action">

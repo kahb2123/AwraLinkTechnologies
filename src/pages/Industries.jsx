@@ -9,14 +9,14 @@ export default function Industries() {
     <>
       <PageMeta
         title="Industries We Serve"
-        description="AweraLink Technologies PLC supports financial institutions, government organizations, private enterprises, and NGOs across Ethiopia with dependable IT infrastructure, networking, security, and power solutions."
+        description="AwraLink Technologies PLC supports financial institutions, government organizations, private enterprises, and NGOs across Ethiopia with dependable IT infrastructure, networking, security, and power solutions."
         path="/industries"
       />
 
       <PageHero
         eyebrow="Industries"
         title="Industries We Serve"
-        description="Dependable technology infrastructure means different things to different sectors. AweraLink adapts its solutions to the operational realities of each industry."
+        description="Dependable technology infrastructure means different things to different sectors. AwraLink adapts its solutions to the operational realities of each industry."
       />
 
       <section className="section section--compact" aria-label="Industry overview">

@@ -7,4 +7,4 @@ Allow: /
 Crawl-delay: 1
 
 # Preferred sitemap location.
-Sitemap: https://aweralink.example/sitemap.xml
+Sitemap: https://awralink.example/sitemap.xml

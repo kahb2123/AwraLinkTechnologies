@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <Link to="/" className="navbar__brand" aria-label="AweraLink Technologies PLC — Home" onClick={() => setOpen(false)}>
+        <Link to="/" className="navbar__brand" aria-label="AwraLink Technologies PLC — Home" onClick={() => setOpen(false)}>
           <Logo variant="dark" showName />
         </Link>
         <nav id="primary-navigation" className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`} aria-label="Primary navigation">

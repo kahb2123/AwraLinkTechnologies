@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__main">
           <div className="footer__brand">
-            <Link to="/" aria-label="AweraLink Technologies PLC — Home">
+            <Link to="/" aria-label="AwraLink Technologies PLC — Home">
               <Logo variant="light" />
             </Link>
             <p>{company.description}</p>
@@ -25,7 +25,7 @@ export default function Footer() {
                   <a
                     key={item.name}
                     href={item.url || '#'}
-                    aria-label={item.url ? `AweraLink on ${item.name}` : `${item.name} profile (link not configured)`}
+                    aria-label={item.url ? `AwraLink on ${item.name}` : `${item.name} profile (link not configured)`}
                     title={item.url ? item.name : `Add your ${item.name} URL in src/config/company.js`}
                     onClick={(event) => {
                       if (!item.url) event.preventDefault();

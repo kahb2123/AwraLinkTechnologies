@@ -21,7 +21,7 @@ export default function Hero() {
           </ScrollReveal>
           <ScrollReveal delay={160}>
             <p className="hero__text">
-              AweraLink Technologies PLC delivers integrated IT infrastructure, networking,
+              AwraLink Technologies PLC delivers integrated IT infrastructure, networking,
               security, and power solutions that help organizations operate securely,
               efficiently, and confidently.
             </p>
