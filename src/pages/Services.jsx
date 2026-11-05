@@ -1,7 +1,9 @@
 import PageMeta from '../components/PageMeta';
 import PageHero from '../components/PageHero';
 import ServiceDetail from '../components/ServiceDetail';
+import ScrollReveal from '../components/ScrollReveal';
 import CTASection from '../components/CTASection';
+import Hero3D from '../assets/Hero3D';
 import { servicesDetailed } from '../data/services';
 
 export default function Services() {
@@ -9,7 +11,7 @@ export default function Services() {
     <>
       <PageMeta
         title="Services"
-        description="AwraLink Technologies PLC provides IT infrastructure, network solutions, security systems, power solutions, technology equipment supply, and installation, integration, and technical support for organizations in Ethiopia."
+        description="AweraLink Technologies PLC provides IT infrastructure, network solutions, security systems, power solutions, technology equipment supply, and installation, integration, and technical support for organizations in Ethiopia."
         path="/services"
       />
 
@@ -22,15 +24,23 @@ export default function Services() {
       <section className="section section--compact" aria-label="Service overview">
         <div className="container">
           <p className="services-intro">
-            AwraLink provides the following service capabilities for banks, enterprises, government
+            AweraLink provides the following service capabilities for banks, enterprises, government
             institutions, NGOs, and development organizations across Ethiopia. Each service is
             presented as a capability — tailored to your requirements and quoted per project.
           </p>
         </div>
       </section>
 
+      <section className="section" aria-label="Technology infrastructure visual">
+        <div className="container">
+          <Hero3D />
+        </div>
+      </section>
+
       {servicesDetailed.map((service, index) => (
-        <ServiceDetail key={service.title} {...service} index={index + 1} />
+        <ScrollReveal key={service.title} delay={index * 150} variant="slide-left">
+          <ServiceDetail {...service} index={index + 1} />
+        </ScrollReveal>
       ))}
 
       <CTASection />

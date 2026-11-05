@@ -1,6 +1,14 @@
 import { useEffect, useRef } from 'react';
 
-export default function ScrollReveal({ children, className = '', delay = 0, as: Tag = 'div', ...rest }) {
+const VARIANT_CLASSES = {
+  'fade-up': 'reveal',
+  'fade-in': 'reveal-fade',
+  'slide-left': 'reveal-left',
+  'slide-right': 'reveal-right',
+  'scale': 'reveal-scale',
+};
+
+export default function ScrollReveal({ children, className = '', delay = 0, variant = 'fade-up', as: Tag = 'div', ...rest }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -28,8 +36,9 @@ export default function ScrollReveal({ children, className = '', delay = 0, as: 
     return () => observer.disconnect();
   }, []);
 
+  const baseClass = VARIANT_CLASSES[variant] || 'reveal';
   return (
-    <Tag ref={ref} className={`reveal ${className}`.trim()} style={{ transitionDelay: `${delay}ms` }} {...rest}>
+    <Tag ref={ref} className={`${baseClass} ${className}`.trim()} style={{ transitionDelay: `${delay}ms` }} {...rest}>
       {children}
     </Tag>
   );
