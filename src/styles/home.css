@@ -743,11 +743,15 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 60vh;
+    min-height: 70vh;
     padding: 5rem 0 4.5rem;
     display: flex;
     align-items: flex-end;
     background: var(--dark-navy);
+    background-image: url('/imag.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .hero__inner {

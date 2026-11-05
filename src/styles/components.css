@@ -68,7 +68,9 @@
 
 @media (max-width: 640px) {
   .page-hero {
-    background: var(--dark-navy);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 50vh;
   }
 }
 
