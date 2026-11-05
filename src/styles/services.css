@@ -67,7 +67,8 @@
   border-radius: inherit;
   background-position: center;
   background-size: cover;
-  opacity: 0.24;
+  opacity: 0.5;
+  filter: brightness(1.15) saturate(1.2);
   transition: transform 600ms ease;
 }
 
