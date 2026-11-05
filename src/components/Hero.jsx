@@ -12,14 +12,6 @@ export default function Hero() {
             <span className="hero__eyebrow-dot" aria-hidden="true" />
             Technology &amp; Infrastructure Solutions · Addis Ababa, Ethiopia
           </p>
-          <div className="hero__actions">
-            <Link to="/services" className="btn btn--primary">
-              Explore Our Services <ArrowRight size={18} />
-            </Link>
-            <Link to="/contact" className="btn btn--outline-navy">
-              Contact Our Team
-            </Link>
-          </div>
           <p className="hero__meta">
             <MapPin size={15} />
             <span>Serving banks, enterprises, government institutions, and NGOs across Ethiopia</span>

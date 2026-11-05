@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0;
   background:
-    url('/image.png') center center / contain no-repeat;
+    url('/imag.png') center center / cover no-repeat;
   background-color: var(--dark-navy);
   z-index: 0;
   animation: hero-bg-zoom 20s ease-in-out infinite alternate;
@@ -743,17 +743,11 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: auto;
+    min-height: 60vh;
     padding: 5rem 0 4.5rem;
-    background-position: 58% center;
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(7, 20, 38, 0.45) 0%,
-        rgba(11, 31, 58, 0.25) 56%,
-        rgba(11, 31, 58, 0.1) 100%
-      ),
-      url('/image.png');
+    display: flex;
+    align-items: flex-end;
+    background: var(--dark-navy);
   }
 
   .hero__inner {

@@ -9,7 +9,7 @@
   color: var(--white);
   background:
     linear-gradient(90deg, rgba(7, 20, 38, 0.35), rgba(11, 31, 58, 0.15)),
-    url('/imag.png') center center / contain no-repeat,
+    url('/imag.png') center center / cover no-repeat,
     var(--gradient-dark);
 }
 
@@ -66,10 +66,10 @@
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.page-hero__desc {
-  max-width: 44rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1.05rem;
+@media (max-width: 640px) {
+  .page-hero {
+    background: var(--dark-navy);
+  }
 }
 
 /* Call-to-action section */
