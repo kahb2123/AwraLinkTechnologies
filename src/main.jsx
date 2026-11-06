@@ -9,6 +9,7 @@ import './styles/components.css';
 import './styles/home.css';
 import './styles/about.css';
 import './styles/services.css';
+import './styles/services-extra.css';
 import './styles/industries.css';
 import './styles/contact.css';
 import './styles/footer.css';
