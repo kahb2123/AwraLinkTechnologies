@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
-export default function ServiceDetail({ icon: Icon, title, description, capabilities, slug, index }) {
+export default function ServiceDetail({ icon: Icon, title, description, capabilities, advantages, slug, index }) {
   const alt = index % 2 === 0;
   const reverse = index % 2 === 0;
 
@@ -25,14 +25,29 @@ export default function ServiceDetail({ icon: Icon, title, description, capabili
           <ScrollReveal>
             <h2 id={`service-${index}-title`}>{title}</h2>
             <p>{description}</p>
-            <ul className="capability-list">
-              {capabilities.map((capability) => (
-                <li key={capability}>
-                  <Check size={18} strokeWidth={2.4} />
-                  <span>{capability}</span>
-                </li>
-              ))}
-            </ul>
+            {capabilities.length > 0 && (
+              <ul className="capability-list">
+                {capabilities.map((capability) => (
+                  <li key={capability}>
+                    <Check size={18} strokeWidth={2.4} />
+                    <span>{capability}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {advantages && advantages.length > 0 && (
+              <div className="service-advantages">
+                <h4>Key advantages</h4>
+                <ul className="capability-list">
+                  {advantages.map((a) => (
+                    <li key={a}>
+                      <Check size={18} strokeWidth={2.4} />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <Link to={`/contact?service=${slug}`} className="btn btn--primary">
               Request a Quote <ArrowRight size={17} />
             </Link>

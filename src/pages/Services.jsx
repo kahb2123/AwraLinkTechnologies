@@ -53,7 +53,7 @@ export default function Services() {
             <div className="ecosystem__center">AWERALINK<br />TECHNOLOGIES PLC</div>
             {categories.map((c, i) => {
               const angle = (i / categories.length) * Math.PI * 2 - Math.PI / 2;
-              const r = 260;
+  const r = window.innerWidth < 768 ? 140 : 260;
               const x = Math.cos(angle) * r;
               const y = Math.sin(angle) * r;
               return (
@@ -71,7 +71,7 @@ export default function Services() {
             <svg className="ecosystem__lines" viewBox="-320 -320 640 640" aria-hidden="true">
               {categories.map((_, i) => {
                 const angle = (i / categories.length) * Math.PI * 2 - Math.PI / 2;
-                const r = 260;
+    const r = window.innerWidth < 768 ? 140 : 260;
                 const x = Math.cos(angle) * r;
                 const y = Math.sin(angle) * r;
                 return (
@@ -88,29 +88,6 @@ export default function Services() {
             <h3>{categories[active].name}</h3>
             <p>{categories[active].desc}</p>
             <a href="#service-detail" className="btn btn--primary">Explore This Service</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Service explorer cards */}
-      <section className="section" aria-labelledby="explorer-heading">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Explore Our Technology Solutions"
-            title="Nine service categories, one trusted partner"
-            align="center"
-          />
-          <div className="grid-3">
-            {servicesOverview.map((s, i) => (
-              <ScrollReveal key={s.title} delay={i * 80} variant="fade-up">
-                <a href={s.to} className="service-explorer-card">
-                  <span className="service-explorer-card__num">{String(i + 1).padStart(2, '0')}</span>
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
-                  <span className="service-explorer-card__link">Explore Service →</span>
-                </a>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>

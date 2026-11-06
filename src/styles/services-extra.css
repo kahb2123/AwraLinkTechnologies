@@ -1,5 +1,6 @@
 /* ===== Ecosystem diagram ===== */
-.services-ecosystem { background: linear-gradient(rgba(7,20,38,0.85), rgba(7,20,38,0.85)), url('/imag.png') center / cover no-repeat; color: var(--white); }
+.services-ecosystem { background: linear-gradient(rgba(7,20,38,0.85), rgba(7,20,38,0.85)), url('/imag.png') center / cover no-repeat; color: var(--white); overflow: hidden; }
+.services-ecosystem h2, .services-ecosystem .section-heading, .services-ecosystem .section-heading * { color: var(--white); }
 .ecosystem { position: relative; width: 640px; height: 640px; margin: 2rem auto; }
 .ecosystem__center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--color-blue), var(--color-cyan)); display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: 0.85rem; z-index: 2; box-shadow: 0 0 40px rgba(25,198,217,0.4); }
 .ecosystem__node { position: absolute; top: 50%; left: 50%; width: 150px; margin: -30px 0 0 -75px; background: rgba(255,255,255,0.06); border: 1px solid rgba(25,198,217,0.3); border-radius: 12px; padding: 0.6rem; color: var(--white); cursor: pointer; transition: all 0.3s ease; text-align: center; }
@@ -22,6 +23,7 @@
 .service-explorer-card__link { color: var(--color-blue); font-weight: 600; font-size: 0.9rem; }
 
 @media (max-width: 768px) {
-  .ecosystem { width: 320px; height: 320px; }
-  .ecosystem__node { width: 110px; margin: -24px 0 0 -55px; font-size: 0.65rem; }
+  .ecosystem { width: 360px; height: 360px; }
+  .ecosystem__node { width: 100px; margin: -20px 0 0 -50px; font-size: 0.6rem; }
+  body, html { overflow-x: hidden; }
 }
