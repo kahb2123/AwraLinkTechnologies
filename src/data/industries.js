@@ -1,4 +1,4 @@
-import { Landmark, Building2, Briefcase, Globe2 } from 'lucide-react';
+import { Landmark, Building2, Briefcase, Globe2, GraduationCap } from 'lucide-react';
 
 export const industries = [
   {
@@ -55,6 +55,20 @@ export const industries = [
       'Equipment sourcing and supply logistics',
       'System configuration and integration',
       'Technical support and troubleshooting',
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: 'Educational Organizations',
+    short: 'Reliable infrastructure for digital learning, campus connectivity, and smart classrooms.',
+    description:
+      'Schools, colleges and universities depend on reliable infrastructure for digital learning, campus connectivity, and smart classrooms. AwraLink delivers networking, devices, smart classroom setups and secure access to support modern education.',
+    needs: [
+      'Smart classroom and e-learning platform setup',
+      'Campus-wide wired and wireless connectivity',
+      'Interactive displays and video conferencing',
+      'Access control and CCTV for campus safety',
+      'Technical support and maintenance',
     ],
   },
 ];
