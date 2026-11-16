@@ -5,19 +5,21 @@ export const company = {
   description:
     'AwraLink Technologies PLC provides technology solutions, infrastructure implementation, equipment supply, installation, configuration, integration, and technical support for organizations across Ethiopia.',
   location: {
-    addressLines: ['K Care Building, Mixco', 'Addis Ababa, Ethiopia'],
-    fullAddress: 'K Care Building, Mixco, Addis Ababa, Ethiopia',
+    addressLines: ['Around Mexico', 'Kirkos Sub City, Werda 10', 'Addis Ababa, Ethiopia'],
+    fullAddress: 'AwraLink Technologies PLC, Around Mexico, Kirkos Sub City, Werda 10, Addis Ababa, Ethiopia',
   },
   contact: {
-    phone: '[Add official company phone number]',
-    phoneHref: '',
-    email: '[Add official company email address]',
-    emailHref: '',
+    phone: '+251923048392',
+    phoneHref: 'tel:+251923048392',
+    email: 'info@awralinktechnologies.com',
+    emailHref: 'mailto:info@awralinktechnologies.com',
+    salesEmail: 'sales@awralinktechnologies.com',
+    salesEmailHref: 'mailto:sales@awralinktechnologies.com',
   },
-  hours: '[Add business hours]',
+  hours: 'Monday – Friday: 8:00 AM – 5:00 PM · Saturday: 8:00 AM – 12:00 PM',
   map: {
-    embedUrl: 'https://www.google.com/maps?q=Addis%20Ababa%2C%20Ethiopia&output=embed',
-    linkUrl: 'https://www.google.com/maps/search/?api=1&query=Addis%20Ababa%2C%20Ethiopia',
+    embedUrl: 'https://www.google.com/maps?q=Kirkos%20Sub%20City%20Werda%2010%20Mexico%20Addis%20Ababa%2C%20Ethiopia&output=embed',
+    linkUrl: 'https://www.google.com/maps/search/?api=1&query=Kirkos%20Sub%20City%20Werda%2010%20Mexico%20Addis%20Ababa%2C%20Ethiopia',
   },
   social: [
     { name: 'Facebook', url: '' },

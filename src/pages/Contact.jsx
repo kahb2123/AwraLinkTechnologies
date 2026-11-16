@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm';
 import { company } from '../config/company';
 
 export default function Contact() {
-  const { phone, phoneHref, email, emailHref, hours } = company.contact;
+  const { phone, phoneHref, email, emailHref, salesEmail, salesEmailHref, hours } = company.contact;
 
   return (
     <>
@@ -25,8 +25,8 @@ export default function Contact() {
         <div className="container contact-layout">
           <div className="contact-intro">
             <p className="lead">
-              Our head office is located in Addis Ababa. Reach out by phone, email, or through
-              the inquiry form — or visit us at the K Care Building in Mixco.
+              Our head office is located in Addis Ababa around Mexico, Kirkos Sub City, Werda 10. Reach out by phone, email, or through
+              the inquiry form — or visit us at our office.
             </p>
 
             <div className="card office-card">
@@ -62,11 +62,24 @@ export default function Contact() {
                   <Mail size={20} />
                 </span>
                 <div>
-                  <span className="contact-row__label">Email</span>
+                  <span className="contact-row__label">Email (General)</span>
                   {emailHref ? (
                     <a className="contact-row__value" href={emailHref}>{email}</a>
                   ) : (
                     <span className="contact-row__value">{email}</span>
+                  )}
+                </div>
+              </div>
+              <div className="contact-row">
+                <span className="icon-chip">
+                  <Mail size={20} />
+                </span>
+                <div>
+                  <span className="contact-row__label">Sales &amp; Consultation</span>
+                  {salesEmailHref ? (
+                    <a className="contact-row__value" href={salesEmailHref}>{salesEmail}</a>
+                  ) : (
+                    <span className="contact-row__value">{salesEmail}</span>
                   )}
                 </div>
               </div>
