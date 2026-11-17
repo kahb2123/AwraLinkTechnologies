@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
-export default function ServiceDetail({ icon: Icon, title, description, capabilities, advantages, slug, index }) {
+export default function ServiceDetail({ icon: Icon, title, description, capabilities, advantages, image, slug, index }) {
   const alt = index % 2 === 0;
   const reverse = index % 2 === 0;
 
@@ -13,13 +13,22 @@ export default function ServiceDetail({ icon: Icon, title, description, capabili
       aria-labelledby={`service-${index}-title`}
     >
       <div className="container service-detail__inner">
-        <ScrollReveal className="service-detail__visual" data-service-index={index}>
+        <ScrollReveal className={`service-detail__visual ${image ? 'has-image' : ''}`} data-service-index={index}>
           <span className="service-detail__number" aria-hidden="true">
             {String(index).padStart(2, '0')}
           </span>
           <span className="icon-chip">
             <Icon size={44} strokeWidth={1.6} />
           </span>
+          {image && (
+              <img
+                className="service-detail__image"
+                src={image}
+                alt={`${title} technology infrastructure`}
+                loading="eager"
+                decoding="async"
+              />
+          )}
         </ScrollReveal>
         <div className="service-detail__content">
           <ScrollReveal>

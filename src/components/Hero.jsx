@@ -14,7 +14,7 @@ export default function Hero() {
           </p>
           <p className="hero__meta">
             <MapPin size={15} />
-            <span>Serving banks, enterprises, government institutions, and NGOs across Ethiopia</span>
+            <span>Serving Banks, Educational Institutions, Enterprises, Government Institutions and NGOs across Ethiopia</span>
           </p>
         </div>
       </div>

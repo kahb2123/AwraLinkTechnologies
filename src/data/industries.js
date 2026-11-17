@@ -59,7 +59,7 @@ export const industries = [
   },
   {
     icon: GraduationCap,
-    title: 'Educational Organizations',
+    title: 'Educational Institutions',
     short: 'Reliable infrastructure for digital learning, campus connectivity, and smart classrooms.',
     description:
       'Schools, colleges and universities depend on reliable infrastructure for digital learning, campus connectivity, and smart classrooms. AwraLink delivers networking, devices, smart classroom setups and secure access to support modern education.',

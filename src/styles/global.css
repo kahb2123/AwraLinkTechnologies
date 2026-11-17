@@ -65,7 +65,7 @@
   --radius-xl: 24px;
 
   --container-width: 1200px;
-  --nav-height: 76px;
+  --nav-height: 100px;
 
   --transition-fast: 180ms ease;
   --transition-base: 260ms ease;
@@ -433,9 +433,9 @@ section[id] {
 .logo__image {
   display: block;
   flex: none;
-  width: 92px;
-  height: 68px;
-  object-fit: cover;
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
   object-position: center;
 }
 
