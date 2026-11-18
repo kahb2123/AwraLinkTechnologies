@@ -117,31 +117,15 @@ To replace them with photos, swap the component usage in `src/components/Hero.js
 - Page copy, service capabilities, industries, values, and process steps live in **`src/data/`**.
 - Mission and vision copy (proposed brand copy) is in **`src/pages/About.jsx`** under the Mission & Vision section.
 
-## Contact Form — Backend / Email Integration
+## Contact Form — Email Handling
 
-The contact form currently runs in **frontend-only demo mode**: submissions are validated
-client-side and shown with a success state, but **no real email is sent**.
+The contact form validates submissions in the browser and opens a prefilled email draft
+to the sales address configured in `src/config/company.js`. The visitor must review and
+send the draft in their email app. This does not confirm delivery.
 
-To receive real inquiries:
-
-1. Open **`src/services/inquiry.js`**.
-2. Replace the `submitInquiry` body with a `fetch()` call to one of:
-   - **A backend API endpoint** you control (recommended — returns JSON, handles validation server-side).
-   - **A form service** such as Formspree, Netlify Forms, Getform, or Basin (each provides an endpoint URL).
-3. Example shape:
-   ```js
-   export async function submitInquiry(payload) {
-     const response = await fetch('https://your-endpoint.example.com/inquiries', {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify(payload),
-     });
-     if (!response.ok) throw new Error('Submission failed');
-     return response.json();
-   }
-   ```
-4. The form already handles loading, error, and success states, and pre-fills
-   "Service of Interest" when links use `/contact?service=network-solutions` etc.
+For automatic delivery without relying on the visitor's email app, connect
+`src/services/inquiry.js` to a backend API or configured form service. Do not put
+email-service credentials or private API keys in frontend code.
 
 Also replace the placeholder phone/email in `src/config/company.js` with the official
 company details before publishing.

@@ -5,7 +5,8 @@ import ContactForm from '../components/ContactForm';
 import { company } from '../config/company';
 
 export default function Contact() {
-  const { phone, phoneHref, email, emailHref, salesEmail, salesEmailHref, hours } = company.contact;
+  const { phone, phoneHref, email, emailHref, salesEmail, salesEmailHref } = company.contact;
+  const { hours } = company;
 
   return (
     <>

@@ -473,7 +473,8 @@
 
 .hero__title,
 .hero__title .gradient-text {
-  color: var(--white);
+  color: var(--primary-navy);
+  font-weight: 800;
 }
 
 .hero__title .gradient-text {
@@ -481,11 +482,13 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .hero__text,
 .hero__meta {
   color: var(--primary-navy);
+  font-weight: 700;
 }
 
 .hero__meta svg {
@@ -746,37 +749,59 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 70vh;
-    padding: 5rem 0 4.5rem;
+    min-height: clamp(420px, 72svh, 620px);
+    padding: 3.5rem 0 2.75rem;
     display: flex;
     align-items: flex-end;
     background: var(--dark-navy);
-    background-image: url('/hero.jpeg');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  }
+
+  .hero__bg {
+    background-image: url('/mobile%20viwe.jpg');
+    background-position: 62% center;
+    background-size: cover;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 20, 38, 0.12) 0%,
+      rgba(7, 20, 38, 0.48) 58%,
+      rgba(7, 20, 38, 0.92) 100%
+    );
   }
 
   .hero__inner {
-    width: min(var(--container-width), 90%);
+    width: min(var(--container-width), 92%);
   }
 
-  .hero__title {
-    font-size: clamp(2.1rem, 9vw, 3rem);
+  .hero__content {
+    max-width: 100%;
   }
 
   .hero__eyebrow {
-    font-size: 0.72rem;
+    max-width: 100%;
+    font-size: 0.68rem;
     line-height: 1.5;
+    color: var(--white) !important;
+    background: rgba(7, 20, 38, 0.78);
+    border-color: rgba(255, 255, 255, 0.28);
   }
 
   .hero__meta {
     align-items: center;
-    font-size: 0.85rem;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.82rem;
+    color: var(--white);
+    background: rgba(7, 20, 38, 0.78);
+    border-color: rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
   }
 
   .hero__meta svg {
-    margin-top: 0.2rem;
+    color: var(--technology-cyan);
   }
 }
 
@@ -790,5 +815,12 @@
 
   .hero__actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    background-position: center;
+    background-size: cover;
   }
 }

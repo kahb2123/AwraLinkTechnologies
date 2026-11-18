@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export default function Hero() {
   return (

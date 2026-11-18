@@ -40,6 +40,8 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 1.15;
+  min-height: 220px;
+  max-height: 420px;
   color: var(--color-blue);
   background:
     radial-gradient(18rem 18rem at 70% 20%, rgba(25, 198, 217, 0.16), transparent 65%),
@@ -179,10 +181,11 @@
   color: var(--color-cyan);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .service-detail__inner,
   .service-detail--reverse .service-detail__inner {
     grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
   }
 
   .service-detail--reverse .service-detail__visual {
@@ -190,8 +193,31 @@
   }
 
   .service-detail__visual {
-    max-width: 420px;
+    max-width: 560px;
     margin-inline: auto;
     width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-detail__visual {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    max-height: none;
+    border-radius: 18px;
+  }
+
+  .service-detail__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }

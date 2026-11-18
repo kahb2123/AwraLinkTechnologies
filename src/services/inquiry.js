@@ -1,15 +1,20 @@
-/**
- * Contact form submission handler.
- *
- * FRONTEND-ONLY DEMONSTRATION — this function does not send real email.
- *
- * To receive real inquiries, replace the body of this function with a
- * fetch() call to your backend API or an email-service endpoint
- * (for example Formspree, Netlify Forms, or a custom API endpoint),
- * then handle the response and any errors accordingly.
- */
+import { company } from '../config/company';
+
 export async function submitInquiry(payload) {
-  await new Promise((resolve) => setTimeout(resolve, 900));
-  console.info('Inquiry payload (demo only — connect a backend to send real inquiries):', payload);
+  const body = [
+    `Name: ${payload.fullName}`,
+    `Organization: ${payload.organization}`,
+    `Work email: ${payload.email}`,
+    `Phone: ${payload.phone || 'Not provided'}`,
+    `Service: ${payload.service}`,
+    `Budget: ${payload.budget || 'Not provided'}`,
+    '',
+    'Message:',
+    payload.message,
+  ].join('\n');
+  const subject = `Website inquiry from ${payload.fullName}`;
+  const mailto = `mailto:${company.contact.salesEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailto;
   return { ok: true };
 }

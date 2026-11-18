@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageMeta from '../components/PageMeta';
 import PageHero from '../components/PageHero';
 import ServiceDetail from '../components/ServiceDetail';
@@ -25,6 +25,18 @@ const categories = [
 
 export default function Services() {
   const [active, setActive] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const updateLayout = () => setIsMobile(window.innerWidth < 768);
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
+
+  const ecosystemRadius = isMobile
+    ? (window.innerWidth < 420 ? 108 : 140)
+    : 260;
 
   return (
     <>
@@ -53,7 +65,7 @@ export default function Services() {
             <div className="ecosystem__center">AWERALINK<br />TECHNOLOGIES PLC</div>
             {categories.map((c, i) => {
               const angle = (i / categories.length) * Math.PI * 2 - Math.PI / 2;
-  const r = window.innerWidth < 768 ? 140 : 260;
+  const r = ecosystemRadius;
               const x = Math.cos(angle) * r;
               const y = Math.sin(angle) * r;
               return (
@@ -71,7 +83,7 @@ export default function Services() {
             <svg className="ecosystem__lines" viewBox="-320 -320 640 640" aria-hidden="true">
               {categories.map((_, i) => {
                 const angle = (i / categories.length) * Math.PI * 2 - Math.PI / 2;
-    const r = window.innerWidth < 768 ? 140 : 260;
+    const r = ecosystemRadius;
                 const x = Math.cos(angle) * r;
                 const y = Math.sin(angle) * r;
                 return (

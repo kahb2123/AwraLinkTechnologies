@@ -23,7 +23,8 @@
 .service-explorer-card__link { color: var(--color-blue); font-weight: 600; font-size: 0.9rem; }
 
 @media (max-width: 768px) {
-  .ecosystem { width: 360px; height: 360px; }
-  .ecosystem__node { width: 100px; margin: -20px 0 0 -50px; font-size: 0.6rem; }
+  .ecosystem { width: min(360px, 92vw); height: min(360px, 92vw); }
+  .ecosystem__node { width: 90px; margin: -18px 0 0 -45px; padding: 0.5rem 0.35rem; }
+  .ecosystem__name { font-size: 0.64rem; }
   body, html { overflow-x: hidden; }
 }

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Send, CheckCircle2, Info } from 'lucide-react';
 import { serviceOptions } from '../data/services';
 import { submitInquiry } from '../services/inquiry';
+import { company } from '../config/company';
 
 const INITIAL_FORM = {
   fullName: '',
@@ -131,14 +132,15 @@ export default function ContactForm() {
         <span className="icon-chip form-success__icon">
           <CheckCircle2 size={32} />
         </span>
-        <h3>Inquiry received</h3>
+        <h3>Complete your inquiry in your email app</h3>
         <p>
           Thank you{form.fullName.trim() ? `, ${form.fullName.trim().split(' ')[0]}` : ''}.
-          Your inquiry has been recorded in this demonstration form.
+          Your email app should open with your inquiry addressed to {company.contact.salesEmail}.
+          Review the message and send it to complete your inquiry.
         </p>
         <p className="form-success__note">
-          <strong>Demo notice:</strong> this form currently runs in frontend-only mode and does not send real email.
-          Connect it to an email service or backend API to receive actual inquiries — see the project README.
+          The website cannot confirm delivery. If no email app opens, email us directly at{' '}
+          <a href={company.contact.salesEmailHref}>{company.contact.salesEmail}</a>.
         </p>
         <button type="button" className="btn btn--outline-navy" onClick={handleReset}>
           Send another inquiry
@@ -276,7 +278,7 @@ export default function ContactForm() {
           <p className="form-demo-note">
             <Info size={15} />
             <span>
-              Demonstration form: inquiries are recorded locally until an email service or backend API is connected.
+              Submitting opens a prefilled email to {company.contact.salesEmail}. Review it and press Send in your email app.
             </span>
           </p>
         </div>
