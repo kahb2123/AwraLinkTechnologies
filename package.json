@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Corporate website for AwraLink Technologies PLC — technology and infrastructure solutions, Addis Ababa, Ethiopia",
+  "description": "Corporate website for AwraLink Technologies — technology and infrastructure solutions, Addis Ababa, Ethiopia",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

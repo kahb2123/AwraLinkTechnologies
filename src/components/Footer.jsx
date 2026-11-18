@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__main">
           <div className="footer__brand">
-            <Link to="/" aria-label="AwraLink Technologies PLC — Home">
+            <Link to="/" aria-label="AwraLink Technologies — Home">
               <Logo variant="light" />
             </Link>
             <p>{company.description}</p>
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <span>© {year} {company.name}. All rights reserved.</span>
+          <span>© {year} AwraLink Technologies PLC. All rights reserved.</span>
           <span>Technology &amp; Infrastructure Solutions — Addis Ababa, Ethiopia</span>
         </div>
       </div>

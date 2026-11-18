@@ -4,7 +4,7 @@ export default function Logo({ variant = 'dark', showName = false }) {
       <img
         className="logo__image"
         src="/awralink-logo.png"
-        alt={showName ? '' : 'AwraLink Technologies PLC'}
+        alt={showName ? '' : 'AwraLink Technologies'}
         width="92"
         height="68"
         loading="eager"
@@ -13,7 +13,7 @@ export default function Logo({ variant = 'dark', showName = false }) {
       {showName && (
         <span className="logo__text">
           <span className="logo__name">AwraLink</span>
-          <span className="logo__sub">TECHNOLOGIES PLC</span>
+          <span className="logo__sub">TECHNOLOGIES</span>
         </span>
       )}
     </span>

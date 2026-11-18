@@ -20,8 +20,8 @@
 }
 
 .footer__brand .logo__image {
-  width: 140px;
-  height: 105px;
+  width: 180px;
+  height: 75px;
   object-fit: contain;
   object-position: center;
   margin-bottom: 0.5rem;

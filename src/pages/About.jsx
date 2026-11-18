@@ -44,14 +44,12 @@ export default function About() {
     <>
       <PageMeta
         title="About Us"
-        description="AwraLink Technologies PLC is an Ethiopian technology and infrastructure solutions company based in Addis Ababa, delivering reliable IT infrastructure, networking, security, and power solutions across Ethiopia."
+        description="AwraLink Technologies is an Ethiopian technology and infrastructure solutions company based in Addis Ababa, delivering reliable IT infrastructure, networking, security, and power solutions across Ethiopia."
         path="/about"
       />
 
       <PageHero
-        eyebrow="About Us"
-        title="About AwraLink Technologies PLC"
-        description="An Ethiopian technology and infrastructure solutions company based in Addis Ababa, serving organizations across Ethiopia."
+        title="About AwraLink Technologies"
       />
 
       <section className="section" aria-labelledby="about-intro-heading">
@@ -63,7 +61,7 @@ export default function About() {
               title="Practical Technology Solutions, Delivered Reliably"
             />
             <p>
-              AwraLink Technologies PLC is an Ethiopian technology and infrastructure solutions
+              AwraLink Technologies is an Ethiopian technology and infrastructure solutions
               company headquartered in Addis Ababa. The company provides technology solutions,
               infrastructure implementation, equipment supply, installation, configuration,
               integration, and technical support for organizations across Ethiopia.

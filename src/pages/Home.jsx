@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Technology & Infrastructure Solutions in Addis Ababa, Ethiopia"
-        description="AwraLink Technologies PLC delivers integrated IT infrastructure, networking, security, and power solutions that help organizations in Ethiopia operate securely, efficiently, and confidently."
+        description="AwraLink Technologies delivers integrated IT infrastructure, networking, security, and power solutions that help organizations in Ethiopia operate securely, efficiently, and confidently."
         path="/"
       />
 
@@ -55,7 +55,7 @@ export default function Home() {
               id="about-heading"
               eyebrow="About AwraLink"
               title="Your Technology Infrastructure Partner"
-              text="AwraLink Technologies PLC supports organizations with practical, reliable technology solutions, from equipment supply and infrastructure planning to installation, implementation, and technical support. We focus on delivering solutions aligned with each client's operational needs."
+              text="AwraLink Technologies supports organizations with practical, reliable technology solutions, from equipment supply and infrastructure planning to installation, implementation, and technical support. We focus on delivering solutions aligned with each client's operational needs."
             />
             <ul className="split__list">
               {aboutHighlights.map((highlight) => (

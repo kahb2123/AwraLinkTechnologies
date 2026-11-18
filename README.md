@@ -1,6 +1,6 @@
-# AwraLink Technologies PLC — Corporate Website
+# AwraLink Technologies — Corporate Website
 
-A modern, responsive corporate website for **AwraLink Technologies PLC**, a technology and infrastructure solutions company based in Addis Ababa, Ethiopia.
+A modern, responsive corporate website for **AwraLink Technologies**, a technology and infrastructure solutions company based in Addis Ababa, Ethiopia.
 
 ## Tech Stack
 

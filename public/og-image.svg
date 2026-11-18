@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="AwraLink Technologies PLC - Technology and Infrastructure Solutions">
-  <title>AwraLink Technologies PLC</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="AwraLink Technologies - Technology and Infrastructure Solutions">
+  <title>AwraLink Technologies</title>
   <desc>Open Graph share image: Technology &amp; Infrastructure Solutions, Addis Ababa, Ethiopia</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
@@ -55,7 +55,7 @@
       Awera<span fill="url(#linkGrad)">Link</span>
     </text>
     <text x="0" y="176" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.34em" fill="rgba(255,255,255,0.62)">
-      TECHNOLOGIES&#160;PLC
+      TECHNOLOGIES
     </text>
   </g>
 

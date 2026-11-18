@@ -1,4 +1,4 @@
-export default function PageHero({ eyebrow, title, description }) {
+export default function PageHero({ title }) {
   return (
     <section className="page-hero">
       <div className="container">

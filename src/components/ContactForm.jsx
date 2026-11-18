@@ -256,7 +256,7 @@ export default function ContactForm() {
               aria-invalid={errors.consent ? 'true' : 'false'}
             />
             <span>
-              I agree that AwraLink Technologies PLC may contact me about this inquiry using the details I provided.
+              I agree that AwraLink Technologies may contact me about this inquiry using the details I provided.
             </span>
           </label>
           {errors.consent && (

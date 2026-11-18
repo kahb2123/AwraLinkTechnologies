@@ -42,14 +42,12 @@ export default function Services() {
     <>
       <PageMeta
         title="Services"
-        description="AweraLink Technologies PLC provides integrated technology solutions across infrastructure, networking, security, power, data centers, smart buildings and managed services."
+        description="AwraLink Technologies provides integrated technology solutions across infrastructure, networking, security, power, data centers, smart buildings and managed services."
         path="/services"
       />
 
       <PageHero
-        eyebrow="OUR TECHNOLOGY CAPABILITIES"
         title="Complete Technology Solutions for Modern Organizations"
-        description="From enterprise infrastructure and secure connectivity to intelligent buildings, business software, and managed IT services, AweraLink delivers integrated technology solutions designed around your organization."
       />
 
       {/* Ecosystem diagram */}
@@ -62,7 +60,7 @@ export default function Services() {
             align="center"
           />
           <div className="ecosystem">
-            <div className="ecosystem__center">AWERALINK<br />TECHNOLOGIES PLC</div>
+            <div className="ecosystem__center">AWERALINK<br />TECHNOLOGIES</div>
             {categories.map((c, i) => {
               const angle = (i / categories.length) * Math.PI * 2 - Math.PI / 2;
   const r = ecosystemRadius;

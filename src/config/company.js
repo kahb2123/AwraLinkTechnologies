@@ -1,12 +1,12 @@
 export const company = {
-  name: 'AwraLink Technologies PLC',
+  name: 'AwraLink Technologies',
   shortName: 'AwraLink',
   tagline: 'Technology & Infrastructure Solutions',
   description:
-    'AwraLink Technologies PLC provides technology solutions, infrastructure implementation, equipment supply, installation, configuration, integration, and technical support for organizations across Ethiopia.',
+    'AwraLink Technologies provides technology solutions, infrastructure implementation, equipment supply, installation, configuration, integration, and technical support for organizations across Ethiopia.',
   location: {
     addressLines: ['Around Mexico', 'Kirkos Sub City, Werda 10', 'Addis Ababa, Ethiopia'],
-    fullAddress: 'AwraLink Technologies PLC, Around Mexico, Kirkos Sub City, Werda 10, Addis Ababa, Ethiopia',
+    fullAddress: 'AwraLink Technologies, Around Mexico, Kirkos Sub City, Werda 10, Addis Ababa, Ethiopia',
   },
   contact: {
     phone: '+251939550011',
