@@ -1,4 +1,3 @@
-
 name: Deploy AwraLink Website to Yegara
 
 on:
@@ -36,7 +35,7 @@ jobs:
       - name: Test Yegara FTP DNS
         run: |
           echo "Checking Yegara FTP hostname..."
-          nslookup ftp.awralink.com
+          nslookup ${{ secrets.FTP_SERVER }}
 
       # 6. Deploy website to Yegara
       - name: Deploy to Yegara using FTPS
