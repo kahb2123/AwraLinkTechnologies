@@ -48,6 +48,7 @@ npm run preview
 awralink-website/
 ├── index.html                  # HTML shell, meta/OG tags, fonts
 ├── public/favicon.svg          # Site favicon
+├── server/                     # Node.js contact API for cPanel
 └── src/
     ├── config/company.js       # Centralized company info (edit here first)
     ├── data/                   # Page content: services, industries, values, etc.
@@ -119,28 +120,40 @@ To replace them with photos, swap the component usage in `src/components/Hero.js
 
 ## Contact Form — Email Handling
 
-The contact form posts to `/api/contact.php`, which validates the inquiry and sends it
-to `sales@awralink.com` over SMTP using PHPMailer. The deployment workflow installs the
-PHP dependencies and uploads the endpoint with the static site.
+The contact form posts to `/api/contact`. The Node.js application in `server/` validates
+the inquiry and sends it to the address in `MAIL_TO` using Nodemailer.
 
-On cPanel hosting, place a `.env` file **outside the public website directory**, in the
-same parent directory as `public_html`. For example, if the endpoint is
-`/home/ACCOUNT/public_html/api/contact.php`, put the file at `/home/ACCOUNT/.env`.
-The endpoint loads this private file with phpdotenv. You can use
-[`.env.example`](./.env.example) as a template:
+### cPanel Node.js application
 
-- `CONTACT_SMTP_HOST`
-- `CONTACT_SMTP_PORT` (usually `587` for TLS or `465` for SSL)
-- `CONTACT_SMTP_USERNAME`
-- `CONTACT_SMTP_PASSWORD`
-- `CONTACT_SMTP_ENCRYPTION` (`tls` or `ssl`)
-- `CONTACT_FROM_EMAIL` (an address permitted by the SMTP account)
+Configure the cPanel application with:
 
-Set the file permissions to `600` if cPanel allows it. Never commit the real `.env` file
-or place it inside `public_html`; `.env` is ignored by Git. Hosting-provided environment
-variables can also be used. The endpoint applies server-side field validation, a hidden
-spam-trap field, and a per-IP submission limit. It only reports success after SMTP accepts
-the message.
+- Node.js 20 or newer
+- Application root: `awralink-api`
+- Application URL: `/api`
+- Startup file: `app.js`
+
+Upload the **contents** of `server/` (`app.js`, `contact-app.js`, `package.json`, and
+`package-lock.json`) into the `awralink-api` application root. In cPanel, click **Run NPM
+Install**, then restart the Node.js application. The GitHub workflow publishes the React
+frontend; the API files are deployed separately to the cPanel application root.
+
+Set these variables in the cPanel Node.js application's **Environment variables** section:
+
+- `MAIL_TO=sales@awralink.com`
+- `SMTP_HOST=mail.awralink.com`
+- `SMTP_PORT=465`
+- `SMTP_USER=sales@awralink.com` (or `SMTP_USERNAME`)
+- `SMTP_PASS=...` (or `SMTP_PASSWORD`)
+- `SMTP_SECURE=true` for SSL on port 465; use `false` for TLS on port 587
+- `FROM_EMAIL=sales@awralink.com` (optional; defaults to the SMTP username)
+
+The app also accepts `SMTP_ENCRYPTION=ssl` or `tls` instead of `SMTP_SECURE`. Use the
+mailbox's current password in cPanel, not in GitHub or `.env.example`. The contact endpoint
+validates fields, includes a honeypot and per-IP rate limit, and reports success only after
+the SMTP server accepts the message.
+
+For local development, start the API with `npm --prefix server start` and the frontend
+with `npm run dev`. Vite proxies `/api` requests to the local Node API.
 
 Also replace the placeholder phone/email in `src/config/company.js` with the official
 company details before publishing.
