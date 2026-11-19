@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="container contact-layout">
           <div className="contact-intro">
             <p className="lead">
-              Our head office is located in Addis Ababa around Mexico, Kirkos Sub City, Werda 10. Reach out by phone, email, or through
+              Our head office is located in Addis Ababa around Mexico, Kirkos Sub City, Woreda 10. Reach out by phone, email, or through
               the inquiry form — or visit us at our office.
             </p>
 
