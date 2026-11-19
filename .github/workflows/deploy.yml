@@ -1,3 +1,4 @@
+
 name: Deploy AwraLink Website to Yegara
 
 on:
@@ -23,33 +24,38 @@ jobs:
           node-version: 20
           cache: npm
 
+      # 3. Setup PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer:v2
 
-      # 3. Install dependencies
+      # 4. Install dependencies
       - name: Install dependencies
         run: npm ci
 
       - name: Install PHP dependencies
         run: composer install --working-dir=server --no-dev --prefer-dist --optimize-autoloader
 
-      # 4. Build React website
+      # 5. Build React website
       - name: Build React website
         run: npm run build
 
-      - name: Include PHP dependencies
-        run: cp -R server/vendor dist/vendor
+      # 6. Prepare PHP email service
+      - name: Prepare PHP email service
+        run: |
+          mkdir -p dist/api
+          cp server/contact.php dist/api/contact.php
+          cp -R server/vendor dist/vendor
 
-      # 5. Test FTP connection to Yegara IP
+      # 7. Test FTP connection to Yegara IP
       - name: Test Yegara FTP Connection
         run: |
           echo "Checking Yegara FTP port 21..."
           nc -zv -w 5 198.38.92.18 21
 
-      # 6. Deploy website to Yegara
+      # 8. Deploy website to Yegara
       - name: Deploy to Yegara using FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
