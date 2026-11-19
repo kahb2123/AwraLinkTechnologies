@@ -237,6 +237,15 @@ a.contact-row__value:hover {
   gap: 0.9rem;
 }
 
+.contact-form__honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .form-error-banner {
   padding: 0.85rem 1rem;
   color: var(--color-error);

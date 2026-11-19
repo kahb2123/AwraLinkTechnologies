@@ -54,7 +54,7 @@ awralink-website/
     ├── assets/                 # SVG illustrations (HeroVisual, AboutVisual)
     ├── components/             # Reusable components
     ├── pages/                  # Home, About, Services, Industries, Contact, NotFound
-    ├── services/inquiry.js     # Contact form submission handler (demo)
+    ├── services/inquiry.js     # Contact form submission handler
     ├── styles/                 # global + per-page stylesheets
     ├── App.jsx                 # Router setup
     └── main.jsx                # Entry point
@@ -119,13 +119,28 @@ To replace them with photos, swap the component usage in `src/components/Hero.js
 
 ## Contact Form — Email Handling
 
-The contact form validates submissions in the browser and opens a prefilled email draft
-to the sales address configured in `src/config/company.js`. The visitor must review and
-send the draft in their email app. This does not confirm delivery.
+The contact form posts to `/api/contact.php`, which validates the inquiry and sends it
+to `sales@awralink.com` over SMTP using PHPMailer. The deployment workflow installs the
+PHP dependencies and uploads the endpoint with the static site.
 
-For automatic delivery without relying on the visitor's email app, connect
-`src/services/inquiry.js` to a backend API or configured form service. Do not put
-email-service credentials or private API keys in frontend code.
+On cPanel hosting, place a `.env` file **outside the public website directory**, in the
+same parent directory as `public_html`. For example, if the endpoint is
+`/home/ACCOUNT/public_html/api/contact.php`, put the file at `/home/ACCOUNT/.env`.
+The endpoint loads this private file with phpdotenv. You can use
+[`.env.example`](./.env.example) as a template:
+
+- `CONTACT_SMTP_HOST`
+- `CONTACT_SMTP_PORT` (usually `587` for TLS or `465` for SSL)
+- `CONTACT_SMTP_USERNAME`
+- `CONTACT_SMTP_PASSWORD`
+- `CONTACT_SMTP_ENCRYPTION` (`tls` or `ssl`)
+- `CONTACT_FROM_EMAIL` (an address permitted by the SMTP account)
+
+Set the file permissions to `600` if cPanel allows it. Never commit the real `.env` file
+or place it inside `public_html`; `.env` is ignored by Git. Hosting-provided environment
+variables can also be used. The endpoint applies server-side field validation, a hidden
+spam-trap field, and a per-IP submission limit. It only reports success after SMTP accepts
+the message.
 
 Also replace the placeholder phone/email in `src/config/company.js` with the official
 company details before publishing.

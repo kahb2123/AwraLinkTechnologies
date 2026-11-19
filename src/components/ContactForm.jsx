@@ -14,6 +14,7 @@ const INITIAL_FORM = {
   budget: '',
   message: '',
   consent: false,
+  website: '',
 };
 
 function Field({ label, htmlFor, required = false, error, hint, children }) {
@@ -113,8 +114,10 @@ export default function ContactForm() {
     try {
       await submitInquiry(form);
       setStatus('success');
-    } catch {
-      setSubmitError('Something went wrong while sending your inquiry. Please try again or contact us directly.');
+    } catch (error) {
+      setSubmitError(error instanceof Error
+        ? error.message
+        : `Something went wrong while sending your inquiry. Please email ${company.contact.salesEmail} directly.`);
       setStatus('idle');
     }
   };
@@ -132,14 +135,13 @@ export default function ContactForm() {
         <span className="icon-chip form-success__icon">
           <CheckCircle2 size={32} />
         </span>
-        <h3>Complete your inquiry in your email app</h3>
+        <h3>Your inquiry has been submitted</h3>
         <p>
           Thank you{form.fullName.trim() ? `, ${form.fullName.trim().split(' ')[0]}` : ''}.
-          Your email app should open with your inquiry addressed to {company.contact.salesEmail}.
-          Review the message and send it to complete your inquiry.
+          Your inquiry has been submitted to our sales team. We will follow up using the contact details you provided.
         </p>
         <p className="form-success__note">
-          The website cannot confirm delivery. If no email app opens, email us directly at{' '}
+          For immediate assistance, email us directly at{' '}
           <a href={company.contact.salesEmailHref}>{company.contact.salesEmail}</a>.
         </p>
         <button type="button" className="btn btn--outline-navy" onClick={handleReset}>
@@ -245,6 +247,19 @@ export default function ContactForm() {
           />
         </Field>
 
+        <div className="contact-form__honeypot" aria-hidden="true">
+          <label htmlFor="website">Leave this field empty</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            value={form.website}
+            onChange={handleChange}
+            tabIndex="-1"
+            autoComplete="off"
+          />
+        </div>
+
         <div className={`field field--full ${errors.consent ? 'field--error' : ''}`}>
           <label className="consent" htmlFor="consent">
             <input
@@ -278,7 +293,7 @@ export default function ContactForm() {
           <p className="form-demo-note">
             <Info size={15} />
             <span>
-              Submitting opens a prefilled email to {company.contact.salesEmail}. Review it and press Send in your email app.
+              Your inquiry will be sent to our sales team. If you have trouble submitting it, email us at {company.contact.salesEmail}.
             </span>
           </p>
         </div>
