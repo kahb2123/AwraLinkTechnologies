@@ -26,5 +26,5 @@
   .ecosystem { width: min(360px, 92vw); height: min(360px, 92vw); }
   .ecosystem__node { width: 90px; margin: -18px 0 0 -45px; padding: 0.5rem 0.35rem; }
   .ecosystem__name { font-size: 0.64rem; }
-  body, html { overflow-x: hidden; }
+  body, html { overflow-x: clip; }
 }
