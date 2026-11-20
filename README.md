@@ -136,6 +136,10 @@ Upload the **contents** of `server/` (`app.js`, `contact-app.js`, `package.json`
 `package-lock.json`) into the `awralink-api` application root. In cPanel, click **Run NPM
 Install**, then restart the Node.js application. The GitHub workflow publishes the React
 frontend; the API files are deployed separately to the cPanel application root.
+Keep the cPanel-generated `public_html/api/.htaccess` file: it routes `/api` requests to
+the Node.js application. The FTP deployment excludes this file so it is not removed during
+frontend deployments. If it is missing, restart/reconfigure the cPanel application or ask
+the hosting provider to recreate its LiteSpeed/Passenger routing file.
 
 Set these variables in the cPanel Node.js application's **Environment variables** section:
 
