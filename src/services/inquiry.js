@@ -3,7 +3,7 @@ import { company } from '../config/company';
 export async function submitInquiry(payload) {
   let response;
   try {
-    response = await fetch('/api/contact', {
+    response = await fetch('/api/contact.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

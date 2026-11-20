@@ -24,19 +24,59 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
       # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      - name: Install contact API dependencies
-        run: npm ci --prefix server
+      - name: Install PHP dependencies
+        run: composer install --working-dir=server --no-dev --prefer-dist --optimize-autoloader
 
-      - name: Test contact API
-        run: npm test --prefix server
+      - name: Check PHP syntax
+        run: php -l server/contact.php
+
+      - name: Test PHP contact endpoint validation
+        run: |
+          php -S 127.0.0.1:8000 -t server > /tmp/awralink-php.log 2>&1 &
+          php_pid=$!
+          trap 'kill "$php_pid" 2>/dev/null || true' EXIT
+
+          status=""
+          for attempt in $(seq 1 10); do
+            status=$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/contact.php || true)
+            if [ "$status" = "405" ]; then
+              break
+            fi
+            sleep 1
+          done
+          test "$status" = "405"
+
+          status=$(curl -sS -o /tmp/awralink-invalid.json -w '%{http_code}' \
+            -X POST -H 'Content-Type: application/json' --data '{}' \
+            http://127.0.0.1:8000/contact.php)
+          test "$status" = "422"
+          grep -q '"ok":false' /tmp/awralink-invalid.json
+
+          status=$(curl -sS -o /tmp/awralink-honeypot.json -w '%{http_code}' \
+            -X POST -H 'Content-Type: application/json' --data '{"website":"autofill"}' \
+            http://127.0.0.1:8000/contact.php)
+          test "$status" = "422"
+          grep -q '"ok":false' /tmp/awralink-honeypot.json
 
       # 4. Build React website
       - name: Build React website
         run: npm run build
+
+      - name: Prepare PHP contact endpoint
+        run: |
+          mkdir -p dist/api
+          cp server/contact.php dist/api/contact.php
+          cp -R server/vendor dist/vendor
 
       # 5. Test FTP connection to Yegara IP
       - name: Test Yegara FTP Connection
@@ -56,8 +96,3 @@ jobs:
           security: loose
           local-dir: ./dist/
           server-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            api/.htaccess

@@ -120,44 +120,37 @@ To replace them with photos, swap the component usage in `src/components/Hero.js
 
 ## Contact Form — Email Handling
 
-The contact form posts to `/api/contact`. The Node.js application in `server/` validates
-the inquiry and sends it to the address in `MAIL_TO` using Nodemailer.
+The contact form posts JSON to `/api/contact.php`. The PHP endpoint in `server/` validates
+the inquiry and sends it to `CONTACT_MAIL_TO` using PHPMailer over SMTP.
 
-### cPanel Node.js application
+### cPanel PHP endpoint
 
-Configure the cPanel application with:
+The GitHub workflow installs PHP 8.2 and Composer dependencies, builds the React site, and
+deploys `server/contact.php` as `public_html/api/contact.php` with Composer's `vendor/`
+directory. PHP files must start with `<?php` as the first bytes of the file.
 
-- Node.js 20 or newer
-- Application root: `awralink-api`
-- Application URL: `/api`
-- Startup file: `app.js`
+Because this site uses the PHP endpoint, disable or remove the cPanel Node.js application
+mapping at `/api`; its Passenger/LiteSpeed routing must not intercept `/api/contact.php`.
 
-Upload the **contents** of `server/` (`app.js`, `contact-app.js`, `package.json`, and
-`package-lock.json`) into the `awralink-api` application root. In cPanel, click **Run NPM
-Install**, then restart the Node.js application. The GitHub workflow publishes the React
-frontend; the API files are deployed separately to the cPanel application root.
-Keep the cPanel-generated `public_html/api/.htaccess` file: it routes `/api` requests to
-the Node.js application. The FTP deployment excludes this file so it is not removed during
-frontend deployments. If it is missing, restart/reconfigure the cPanel application or ask
-the hosting provider to recreate its LiteSpeed/Passenger routing file.
+Store SMTP settings in a private `.env` file outside `public_html`, for example
+`/home/<cpanel-user>/.env`:
 
-Set these variables in the cPanel Node.js application's **Environment variables** section:
+- `CONTACT_MAIL_TO=sales@awralink.com`
+- `CONTACT_SMTP_HOST=mail.awralink.com`
+- `CONTACT_SMTP_PORT=465`
+- `CONTACT_SMTP_USERNAME=sales@awralink.com`
+- `CONTACT_SMTP_PASSWORD=...`
+- `CONTACT_SMTP_ENCRYPTION=ssl` for port 465 or `tls` for port 587
+- `CONTACT_FROM_EMAIL=sales@awralink.com` (optional; defaults to the SMTP username)
 
-- `MAIL_TO=sales@awralink.com`
-- `SMTP_HOST=mail.awralink.com`
-- `SMTP_PORT=465`
-- `SMTP_USER=sales@awralink.com` (or `SMTP_USERNAME`)
-- `SMTP_PASS=...` (or `SMTP_PASSWORD`)
-- `SMTP_SECURE=true` for SSL on port 465; use `false` for TLS on port 587
-- `FROM_EMAIL=sales@awralink.com` (optional; defaults to the SMTP username)
+Use the mailbox's current password and never commit it to GitHub. The API reports success
+only after the SMTP server accepts the message. Check the recipient mailbox's spam folder
+and cPanel's email delivery tracking if a successful submission is not received.
 
-The app also accepts `SMTP_ENCRYPTION=ssl` or `tls` instead of `SMTP_SECURE`. Use the
-mailbox's current password in cPanel, not in GitHub or `.env.example`. The contact endpoint
-validates fields, includes a honeypot and per-IP rate limit, and reports success only after
-the SMTP server accepts the message.
-
-For local development, start the API with `npm --prefix server start` and the frontend
-with `npm run dev`. Vite proxies `/api` requests to the local Node API.
+For local development, install PHP dependencies with
+`composer install --working-dir=server`, start PHP with
+`php -S 127.0.0.1:8000 -t server`, and run the frontend with `npm run dev`. Vite proxies
+`/api` requests to the local PHP server.
 
 Also replace the placeholder phone/email in `src/config/company.js` with the official
 company details before publishing.
