@@ -131,17 +131,21 @@ $smtpEncryption = strtolower(envValue(
 $mailTo = envValue('CONTACT_MAIL_TO', 'sales@awralink.com');
 $fromEmail = envValue('CONTACT_FROM_EMAIL', $smtpUser);
 
-if (
-    $smtpHost === '' ||
-    $smtpPort === false ||
-    !in_array($smtpPort, [465, 587], true) ||
-    $smtpUser === '' ||
-    $smtpPassword === '' ||
-    !in_array($smtpEncryption, ['ssl', 'tls'], true) ||
-    !filter_var($mailTo, FILTER_VALIDATE_EMAIL) ||
-    !filter_var($fromEmail, FILTER_VALIDATE_EMAIL)
-) {
-    error_log('AwraLink: SMTP settings are incomplete or invalid.');
+$invalidSettings = [];
+if ($smtpHost === '') $invalidSettings[] = 'CONTACT_SMTP_HOST';
+if ($smtpPort === false || !in_array($smtpPort, [465, 587], true)) {
+    $invalidSettings[] = 'CONTACT_SMTP_PORT';
+}
+if ($smtpUser === '') $invalidSettings[] = 'CONTACT_SMTP_USERNAME';
+if ($smtpPassword === '') $invalidSettings[] = 'CONTACT_SMTP_PASSWORD';
+if (!in_array($smtpEncryption, ['ssl', 'tls'], true)) {
+    $invalidSettings[] = 'CONTACT_SMTP_ENCRYPTION';
+}
+if (!filter_var($mailTo, FILTER_VALIDATE_EMAIL)) $invalidSettings[] = 'CONTACT_MAIL_TO';
+if (!filter_var($fromEmail, FILTER_VALIDATE_EMAIL)) $invalidSettings[] = 'CONTACT_FROM_EMAIL';
+
+if ($invalidSettings !== []) {
+    error_log('AwraLink: SMTP settings are incomplete or invalid: ' . implode(', ', $invalidSettings));
     reply(503, ['ok' => false, 'error' => 'Email service is not configured yet. Please email sales@awralink.com.']);
 }
 
