@@ -113,9 +113,12 @@ if ($autoload === null) {
 
 require_once $autoload;
 
+$envSource = 'no readable .env file';
 foreach ([dirname(__DIR__, 2), dirname(__DIR__)] as $envRoot) {
-    if (is_file($envRoot . '/.env')) {
-        Dotenv\Dotenv::createImmutable($envRoot)->safeLoad();
+    $envPath = $envRoot . '/.env';
+    if (is_file($envPath) && is_readable($envPath)) {
+        Dotenv\Dotenv::createMutable($envRoot)->safeLoad();
+        $envSource = $envPath;
         break;
     }
 }
@@ -145,7 +148,11 @@ if (!filter_var($mailTo, FILTER_VALIDATE_EMAIL)) $invalidSettings[] = 'CONTACT_M
 if (!filter_var($fromEmail, FILTER_VALIDATE_EMAIL)) $invalidSettings[] = 'CONTACT_FROM_EMAIL';
 
 if ($invalidSettings !== []) {
-    error_log('AwraLink: SMTP settings are incomplete or invalid: ' . implode(', ', $invalidSettings));
+    error_log(
+        'AwraLink: SMTP settings are incomplete or invalid: ' .
+        implode(', ', $invalidSettings) .
+        '; env source: ' . $envSource
+    );
     reply(503, ['ok' => false, 'error' => 'Email service is not configured yet. Please email sales@awralink.com.']);
 }
 
