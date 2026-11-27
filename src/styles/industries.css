@@ -68,12 +68,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  justify-self: center;
+  align-self: center;
+  width: 144px;
+  height: 144px;
   border-radius: 24px;
   color: var(--color-white);
   background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
   box-shadow: 0 10px 22px rgba(23, 105, 255, 0.28);
+}
+
+.industry-detail__icon svg {
+  width: 64px;
+  height: 64px;
 }
 
 .industry-detail__content h2 {
@@ -117,5 +124,17 @@
 @media (max-width: 760px) {
   .industry-detail {
     grid-template-columns: 1fr;
+  }
+
+  .industry-detail__icon {
+    justify-self: start;
+    align-self: start;
+    width: 96px;
+    height: 96px;
+  }
+
+  .industry-detail__icon svg {
+    width: 44px;
+    height: 44px;
   }
 }
