@@ -17,15 +17,6 @@ export default function Industries() {
         title="Industries We Serve"
       />
 
-      <section className="section section--compact" aria-label="Industry overview">
-        <div className="container">
-          <p className="industries-intro">
-            Each sector has its own infrastructure priorities. The overview below describes the
-            needs we commonly support — without claiming specific clients or completed projects.
-          </p>
-        </div>
-      </section>
-
       <section className="section section--white" aria-label="Industry details">
         <div className="container">
           {industries.map((industry, index) => (
