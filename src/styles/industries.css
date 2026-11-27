@@ -19,27 +19,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 2rem;
+  min-height: 280px;
 }
 
 .industry-card__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
-  border-radius: 32px;
+  width: 160px;
+  height: 160px;
+  border-radius: 36px;
   color: var(--color-white);
   background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
-  box-shadow: 0 14px 32px rgba(23, 105, 255, 0.32);
-  margin-bottom: 1.25rem;
+  box-shadow: 0 16px 36px rgba(23, 105, 255, 0.35);
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   .industry-card__icon {
-    width: 96px;
-    height: 96px;
+    width: 110px;
+    height: 110px;
+  }
+  
+  .industry-card {
+    min-height: 240px;
+    padding: 2rem 1.5rem;
   }
 }
 
