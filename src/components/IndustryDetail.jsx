@@ -1,12 +1,22 @@
-import { Check } from 'lucide-react';
+import { Check, Globe } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
-export default function IndustryDetail({ icon: Icon, title, description, needs, index = 0 }) {
+export default function IndustryDetail({ image, icon: Icon, title, description, needs, index = 0 }) {
   return (
     <ScrollReveal delay={(index % 2) * 90}>
       <article className="card industry-detail">
         <div className="industry-detail__icon" aria-hidden="true">
-          <Icon size={34} strokeWidth={1.7} />
+          {image ? (
+            <img
+              className="industry-detail__image"
+              src={image}
+              alt={title}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <Icon size={34} strokeWidth={1.7} />
+          )}
         </div>
         <div className="industry-detail__content">
           <h2>{title}</h2>

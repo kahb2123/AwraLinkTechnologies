@@ -1,8 +1,8 @@
-import { Landmark, Building2, Briefcase, Globe2, GraduationCap } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 export const industries = [
   {
-    icon: Landmark,
+    image: '/banking.svg',
     title: 'Banking & Financial Services',
     short: 'Secure, always-available infrastructure for transactions, branch connectivity, and compliance.',
     description:
@@ -16,7 +16,7 @@ export const industries = [
     ],
   },
   {
-    icon: Building2,
+    image: '/government.svg',
     title: 'Government & Public Institutions',
     short: 'Reliable infrastructure for digital services, records, and secure communications.',
     description:
@@ -30,7 +30,7 @@ export const industries = [
     ],
   },
   {
-    icon: Briefcase,
+    image: '/enterprise.svg',
     title: 'Private Sector & Enterprises',
     short: 'Scalable infrastructure to support growth, collaboration, and daily operations.',
     description:
@@ -44,7 +44,7 @@ export const industries = [
     ],
   },
   {
-    icon: Globe2,
+    icon: Globe,
     title: 'NGOs & Development Organizations',
     short: 'Dependable connectivity and power for program coordination and data sharing.',
     description:
@@ -58,7 +58,7 @@ export const industries = [
     ],
   },
   {
-    icon: GraduationCap,
+    image: '/education.svg',
     title: 'Educational Institutions',
     short: 'Reliable infrastructure for digital learning, campus connectivity, and smart classrooms.',
     description:
